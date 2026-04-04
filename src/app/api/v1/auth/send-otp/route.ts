@@ -76,7 +76,9 @@ export async function POST(request: NextRequest) {
     });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : String(err);
-    console.error('[Twilio Verify send error]', msg);
+    const code = (err as { code?: number })?.code;
+    const status = (err as { status?: number })?.status;
+    console.error('[Twilio Verify send error]', { msg, code, status, phone });
 
     if (msg.includes('429') || msg.toLowerCase().includes('rate')) {
       return NextResponse.json(
@@ -85,8 +87,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Surface the Twilio error so we can debug in production
     return NextResponse.json(
-      { error: 'Failed to send verification code. Please try again.' },
+      { error: `SMS sending failed: ${msg}` },
       { status: 502 },
     );
   }

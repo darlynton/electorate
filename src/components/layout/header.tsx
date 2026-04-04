@@ -28,6 +28,7 @@ import {
   Trophy,
   Vote,
   Info,
+  LogIn,
   LogOut,
   MapPin,
   Mail,
@@ -164,12 +165,13 @@ export function Header() {
                 </DropdownMenu>
               ) : (
                 <>
-                  <LoginDialog
-                    triggerLabel={isLoading ? 'Loading...' : 'Log In'}
-                    triggerClassName="inline-flex items-center justify-center gap-2 rounded-md border border-input px-3 py-2 text-sm font-medium hover:bg-muted transition-colors"
-                    open={loginOpen}
-                    onOpenChange={setLoginOpen}
-                  />
+                  <button
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-input px-3 py-2 text-sm font-medium hover:bg-muted transition-colors"
+                    onClick={() => setLoginOpen(true)}
+                  >
+                    <LogIn className="w-4 h-4" />
+                    {isLoading ? 'Loading...' : 'Log In'}
+                  </button>
                   <SignupDialog
                     triggerLabel="Sign Up"
                     triggerClassName="inline-flex items-center justify-center gap-2 rounded-md bg-[#271E5D] hover:bg-[#271E5D]/90 px-3 py-2 text-sm font-medium text-white transition-colors"
@@ -279,12 +281,13 @@ export function Header() {
                       </>
                     ) : (
                       <>
-                        <LoginDialog
-                          triggerLabel="Log In"
-                          triggerClassName="w-full inline-flex items-center justify-center gap-2 rounded-md border border-input px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
-                          open={loginOpen}
-                          onOpenChange={setLoginOpen}
-                        />
+                        <button
+                          className="w-full inline-flex items-center justify-center gap-2 rounded-md border border-input px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+                          onClick={() => { setMobileMenuOpen(false); setLoginOpen(true); }}
+                        >
+                          <LogIn className="w-4 h-4" />
+                          Log In
+                        </button>
                         <SignupDialog
                           triggerLabel="Sign Up to Track"
                           triggerClassName="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#271E5D] hover:bg-[#271E5D]/90 px-4 py-2 text-sm font-medium text-white transition-colors"
@@ -302,6 +305,13 @@ export function Header() {
           </div>
         </div>
       </header>
+
+      {/* Login dialog (single shared instance) */}
+      <LoginDialog
+        triggerLabel=""
+        open={loginOpen}
+        onOpenChange={setLoginOpen}
+      />
 
       {/* Location setup dialog */}
       <LocationSetupDialog

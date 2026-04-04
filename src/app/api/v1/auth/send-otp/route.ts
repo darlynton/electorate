@@ -35,9 +35,21 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const accountSid = process.env.TWILIO_ACCOUNT_SID!;
-  const authToken = process.env.TWILIO_AUTH_TOKEN!;
-  const serviceSid = process.env.TWILIO_VERIFY_SERVICE_SID!;
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+  const serviceSid = process.env.TWILIO_VERIFY_SERVICE_SID;
+
+  if (!accountSid || !authToken || !serviceSid) {
+    console.error('[send-otp] Missing Twilio env vars:', {
+      TWILIO_ACCOUNT_SID: !!accountSid,
+      TWILIO_AUTH_TOKEN: !!authToken,
+      TWILIO_VERIFY_SERVICE_SID: !!serviceSid,
+    });
+    return NextResponse.json(
+      { error: 'SMS service is not configured. Please contact support.' },
+      { status: 503 },
+    );
+  }
 
   // Check for duplicate phone number before spending an SMS.
   // The RPC checks both user_profiles.phone_number (completed signups)

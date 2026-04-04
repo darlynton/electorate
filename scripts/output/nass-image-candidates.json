@@ -1,0 +1,1778 @@
+[
+  {
+    "id": "207d7597-b4b3-436a-a882-3a9b63a0f536",
+    "slug": "ezenwa-francis-onyewuchi",
+    "full_name": "Ezenwa Francis Onyewuchi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/94.jpg"
+  },
+  {
+    "id": "eb7b94d4-ecbe-4d64-ba9a-4ffb0042c4ff",
+    "slug": "orji-uzor-kalu",
+    "full_name": "Orji Uzor Kalu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/97.jpg"
+  },
+  {
+    "id": "b4406b0c-4efc-4d8e-a4ab-ab65ee41c869",
+    "slug": "jibrin-isah",
+    "full_name": "Jibrin Isah",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/101.jpg"
+  },
+  {
+    "id": "80a7faf1-f14c-46b5-bfe1-0f5bc3ae9379",
+    "slug": "michael-opeyemi-bamidele",
+    "full_name": "Michael Opeyemi Bamidele",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/158.jpg"
+  },
+  {
+    "id": "983f2e3d-54ae-40cd-8909-8ccf41a33cc0",
+    "slug": "mohammed-sani-musa",
+    "full_name": "Mohammed Sani Musa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/185.jpg"
+  },
+  {
+    "id": "027f2593-a825-41cd-abd2-d2c80a63f1a1",
+    "slug": "ashiru-oyelola-yisa",
+    "full_name": "Ashiru Oyelola Yisa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/202.jpg"
+  },
+  {
+    "id": "f554e060-bb03-4cb3-aa1d-3d989f54b96f",
+    "slug": "barinada-barry-mpigi",
+    "full_name": "Barinada Barry Mpigi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/255.jpg"
+  },
+  {
+    "id": "99052eb4-47d3-43e7-906c-65e7aa9b9c60",
+    "slug": "enyinnaya-harcourt-abaribe",
+    "full_name": "Enyinnaya Harcourt Abaribe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/318.jpg"
+  },
+  {
+    "id": "9972030c-0eca-45b1-b399-42da2ff21f7c",
+    "slug": "buhari-abdulfatai-omotayo",
+    "full_name": "Buhari Abdulfatai Omotayo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/337.jpg"
+  },
+  {
+    "id": "f598e772-f643-4a4c-a18e-2616ff74866e",
+    "slug": "abba-patrick-moro",
+    "full_name": "Abba Patrick Moro",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/356.jpg"
+  },
+  {
+    "id": "3b8aa754-5232-4bd8-9e2d-eb8b317e536f",
+    "slug": "abdulaziz-abubakar-yari",
+    "full_name": "Abdulaziz Abubakar Yari",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/358.jpg"
+  },
+  {
+    "id": "2bdc0d66-b179-42d9-889a-6cda20a9c8d4",
+    "slug": "francis-adenigba-fadahunsi",
+    "full_name": "Francis Adenigba Fadahunsi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/393.jpg"
+  },
+  {
+    "id": "d5a1166f-35d5-46d5-bf6f-39af75f6787f",
+    "slug": "godiya-akwashiki",
+    "full_name": "Godiya Akwashiki",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/394.jpg"
+  },
+  {
+    "id": "357e580a-11f6-4b8d-afe8-5d815d0f4d51",
+    "slug": "aliyu-magatakarda-wamakko",
+    "full_name": "Aliyu Magatakarda Wamakko",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/404.jpg"
+  },
+  {
+    "id": "aa548d94-1dc1-4d8d-a723-8385d9d7c136",
+    "slug": "danjuma-goje-mohammed",
+    "full_name": "Danjuma Goje Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/408.jpg"
+  },
+  {
+    "id": "a443d7ca-6b46-42ff-94a9-b7347464dde6",
+    "slug": "mohammad-adamu-mainasara-aliero",
+    "full_name": "Mohammad Adamu Mainasara Aliero",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/411.jpg"
+  },
+  {
+    "id": "46468642-5ac3-4630-b9ac-a5bb14431ea1",
+    "slug": "mohammed-ali-ndume",
+    "full_name": "Mohammed Ali Ndume",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/412.jpg"
+  },
+  {
+    "id": "e735f261-f9b0-4361-9a80-0652cccd908e",
+    "slug": "ahmad-ibrahim-lawan",
+    "full_name": "Ahmad Ibrahim Lawan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/424.jpg"
+  },
+  {
+    "id": "3a56ee23-282c-414b-ae1f-fa94aca4ceef",
+    "slug": "ibrahim-barau-jibrin",
+    "full_name": "Ibrahim Barau Jibrin",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/433.jpg"
+  },
+  {
+    "id": "ac2d0f4f-cf39-4f27-ab7f-a9581cd23c99",
+    "slug": "ibrahim-mohammed-bomai",
+    "full_name": "Ibrahim Mohammed Bomai",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/434.jpg"
+  },
+  {
+    "id": "63ed881f-3de1-4a20-9ba7-043c8f9382e3",
+    "slug": "mustapha-musa",
+    "full_name": "Mustapha Musa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/437.jpg"
+  },
+  {
+    "id": "43e8536d-3f2a-4325-ab60-5321dc03d95f",
+    "slug": "jarigbe-agom-jarigbe",
+    "full_name": "Jarigbe Agom Jarigbe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/451.jpg"
+  },
+  {
+    "id": "3fab037c-9ab0-48f0-8411-4e4e95c058a1",
+    "slug": "yahaya-abubakar-abdullahi",
+    "full_name": "Yahaya Abubakar Abdullahi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/452.jpg"
+  },
+  {
+    "id": "b353cfaa-1aa1-4cec-badf-9f79ce576c02",
+    "slug": "sadiq-suleiman-umar",
+    "full_name": "Sadiq Suleiman Umar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/454.jpg"
+  },
+  {
+    "id": "7271302a-1944-4f35-9611-261c2bc14d31",
+    "slug": "shuaibu-isa-lau",
+    "full_name": "Shuaibu Isa Lau",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/456.jpg"
+  },
+  {
+    "id": "fe087793-3656-4875-8236-f76fb11f3646",
+    "slug": "adetokunbo-abiru-mukhail",
+    "full_name": "Adetokunbo Abiru Mukhail",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/492.jpg"
+  },
+  {
+    "id": "b578d569-c1a2-4a34-af1a-e66bca179ae7",
+    "slug": "seriake-henry-dickson",
+    "full_name": "Seriake Henry Dickson",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/493.jpg"
+  },
+  {
+    "id": "04e53c2c-c70a-4bcc-85b3-fb0a80a6d47f",
+    "slug": "yau-sahabi-alhaji",
+    "full_name": "Yau Sahabi Alhaji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/505.jpg"
+  },
+  {
+    "id": "f28df87d-3aeb-4320-9a6b-f4d680307597",
+    "slug": "godswill-obot-akpabio",
+    "full_name": "Godswill Obot Akpabio",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/513.jpg"
+  },
+  {
+    "id": "a7b73172-1761-4b41-b353-947e51d4c895",
+    "slug": "kelvin-chukwu",
+    "full_name": "Kelvin Chukwu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/518.jpg"
+  },
+  {
+    "id": "01acbc85-5298-432f-ab69-69848029d780",
+    "slug": "pam-mwadkon-dachungyang",
+    "full_name": "Pam Mwadkon Dachungyang",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/519.jpg"
+  },
+  {
+    "id": "235cb29a-e9d4-4b6e-9c7b-85f8528529b8",
+    "slug": "ibrahim-jimoh",
+    "full_name": "Ibrahim Jimoh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/521.jpg"
+  },
+  {
+    "id": "ee347efd-ad22-4a0e-9ea0-8403b184b8cb",
+    "slug": "augustine-okwudiri-akobundu",
+    "full_name": "Augustine Okwudiri Akobundu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/523.jpg"
+  },
+  {
+    "id": "90c286e7-32e3-4f90-8569-a0a13e8e7819",
+    "slug": "mohammed-tahir-monguno",
+    "full_name": "Mohammed Tahir Monguno",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/528.jpg"
+  },
+  {
+    "id": "5bbb4048-d188-44bb-9eb7-d8c141e0768f",
+    "slug": "babangida-hussaini",
+    "full_name": "Babangida Hussaini",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/533.jpg"
+  },
+  {
+    "id": "3f30ca18-0ebb-45ca-b488-2b9105f20b73",
+    "slug": "aminu-abbas",
+    "full_name": "Aminu Abbas",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/544.jpg"
+  },
+  {
+    "id": "df7a4941-d40d-445d-9417-d69106640c8a",
+    "slug": "wasiu-sanni-eshilokun",
+    "full_name": "Wasiu Sanni Eshilokun",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/559.jpg"
+  },
+  {
+    "id": "61571934-c08d-4e07-adfa-7a2f2570cd7c",
+    "slug": "justus-olugbenga-daniel",
+    "full_name": "Justus Olugbenga Daniel",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/560.jpg"
+  },
+  {
+    "id": "27d79041-975c-496e-acea-ffceb0eb4ce9",
+    "slug": "sunday-steve-karimi",
+    "full_name": "Sunday Steve Karimi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/561.jpg"
+  },
+  {
+    "id": "ced16f88-edfa-4062-b005-04b7505441f1",
+    "slug": "nasiru-sani-zangon-daura",
+    "full_name": "Nasiru Sani Zangon Daura",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/566.jpg"
+  },
+  {
+    "id": "e5c83678-4bf5-4851-9f1a-9aadfe8944e5",
+    "slug": "abdul-ningi",
+    "full_name": "Abdul Ningi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/567.jpg"
+  },
+  {
+    "id": "5cb7014f-16c3-4ebc-b00f-736572087bdd",
+    "slug": "sunday-katung",
+    "full_name": "Sunday Katung",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/576.jpg"
+  },
+  {
+    "id": "acf5b9a0-c585-4601-b139-da48697efb05",
+    "slug": "benson-agadaga",
+    "full_name": "Benson Agadaga",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/577.jpg"
+  },
+  {
+    "id": "8e839e90-ada5-4044-9032-279bf201cbfe",
+    "slug": "onawo-mohammed-ogoshi",
+    "full_name": "Onawo Mohammed Ogoshi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/579.jpg"
+  },
+  {
+    "id": "508ec9cb-8dda-4481-982b-8117254d03e8",
+    "slug": "kaka-shehu-lawan",
+    "full_name": "Kaka Shehu Lawan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/587.jpg"
+  },
+  {
+    "id": "c6915a68-5ba0-47af-9e3e-f725f041a0ce",
+    "slug": "sani-abubakar-bello",
+    "full_name": "Sani Abubakar Bello",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/590.jpg"
+  },
+  {
+    "id": "67ce3d9e-2ba5-44c1-aa56-8880a3c93af5",
+    "slug": "bassey-aniekan-etim",
+    "full_name": "Bassey Aniekan Etim",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/591.jpg"
+  },
+  {
+    "id": "8e2380e0-4d8b-4662-8149-6368fe5000c7",
+    "slug": "ned-munir-nwoko",
+    "full_name": "Ned Munir Nwoko",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/600.jpg"
+  },
+  {
+    "id": "50a6c885-c7d9-48d9-8adc-ab14d6d47865",
+    "slug": "victor-umeh",
+    "full_name": "Victor Umeh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/603.jpg"
+  },
+  {
+    "id": "2caa9269-733f-43c0-b727-871c96a45098",
+    "slug": "anthony-siyako-yaro",
+    "full_name": "Anthony Siyako Yaro",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/605.jpg"
+  },
+  {
+    "id": "a11739a8-a9c5-4391-b9b5-331cf9d28c7f",
+    "slug": "ipinsagba-emmanuel-olajide",
+    "full_name": "Ipinsagba Emmanuel Olajide",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/623.jpg"
+  },
+  {
+    "id": "1ac8d4d3-5ace-489e-9b90-902b9d8bde74",
+    "slug": "akpotiuduaghan-natasha",
+    "full_name": "Akpoti-uduaghan Natasha",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/624.jpg"
+  },
+  {
+    "id": "458a976f-cbfa-46bb-bf3b-6cba532a415d",
+    "slug": "david-jimkuta",
+    "full_name": "David Jimkuta",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/632.jpg"
+  },
+  {
+    "id": "41e7c466-1526-42c9-bd44-97c8e8d0dcd6",
+    "slug": "ireti-heebah-kingibe",
+    "full_name": "Ireti Heebah Kingibe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/636.jpg"
+  },
+  {
+    "id": "2e16463b-f2ee-420c-a19b-bf4bf5c8c60d",
+    "slug": "peter-ndalikali-jiya",
+    "full_name": "Peter Ndalikali Jiya",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/637.jpg"
+  },
+  {
+    "id": "bd492c9c-c065-40ce-abb2-8c111845e3bc",
+    "slug": "mallammadori-ahmed-abdulhamid",
+    "full_name": "Mallam-madori Ahmed Abdulhamid",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/639.jpg"
+  },
+  {
+    "id": "1740eeaf-91fd-4d5d-b6cf-0dd2f1d57210",
+    "slug": "samaila-dahuwa-kaila",
+    "full_name": "Samaila Dahuwa Kaila",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/651.jpg"
+  },
+  {
+    "id": "d6b5f41b-4f5b-49ea-9de5-19e961331b46",
+    "slug": "umar-shehu-buba",
+    "full_name": "Umar Shehu Buba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/652.jpg"
+  },
+  {
+    "id": "493c3fa3-9f78-4184-b15b-ac156d687c8b",
+    "slug": "ikra-aliyu-bilbis",
+    "full_name": "Ikra Aliyu Bilbis",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/662.jpg"
+  },
+  {
+    "id": "7154c1ae-2fc1-4482-bf90-a1758613241c",
+    "slug": "lawal-usman",
+    "full_name": "Lawal Usman",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/663.jpg"
+  },
+  {
+    "id": "e2c3f1d1-3b62-4a22-b4e8-a2566ae62893",
+    "slug": "adeola-solomon-olamilekan",
+    "full_name": "Adeola Solomon Olamilekan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/667.jpg"
+  },
+  {
+    "id": "76525e95-c1d4-4e26-8560-4bfa95f0b9b5",
+    "slug": "olalere-oyewumi",
+    "full_name": "Olalere Oyewumi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/668.jpg"
+  },
+  {
+    "id": "5ca57b60-3b96-43a6-a429-a5fc78bc1f78",
+    "slug": "afolabi-salisu",
+    "full_name": "Afolabi Salisu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/670.jpg"
+  },
+  {
+    "id": "8b97d325-b2fd-459c-a64c-d1ea456578de",
+    "slug": "oluwole-fadeyi-olubiyi",
+    "full_name": "Oluwole Fadeyi Olubiyi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/673.jpg"
+  },
+  {
+    "id": "0ca23199-94e8-4b39-b5c2-13770d0e6650",
+    "slug": "ibrahim-dankwambo",
+    "full_name": "Ibrahim Dankwambo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/679.jpg"
+  },
+  {
+    "id": "fcf1c9ee-3f11-4cd7-b0d6-d342d1f4f5ae",
+    "slug": "allwell-heacho-onyesoh",
+    "full_name": "Allwell Heacho Onyesoh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/690.jpg"
+  },
+  {
+    "id": "4980f7f0-1fe2-49eb-87e4-ea92ff6453a3",
+    "slug": "manu-haruna",
+    "full_name": "Manu Haruna",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/694.jpg"
+  },
+  {
+    "id": "ce950ab8-d465-4b05-b71e-9bc4a89e76ee",
+    "slug": "ahmed-wadada-aliyu",
+    "full_name": "Ahmed Wadada Aliyu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/695.jpg"
+  },
+  {
+    "id": "b5611ff5-22ea-4677-b754-fc4f51422f17",
+    "slug": "nwachukwu-emmanuel",
+    "full_name": "Nwachukwu Emmanuel",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/696.jpg"
+  },
+  {
+    "id": "9d5d411d-9152-4b76-9976-64566623dc1b",
+    "slug": "abubakar-yabo-umaru",
+    "full_name": "Abubakar Yabo Umaru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/5.jpg"
+  },
+  {
+    "id": "48ced4e2-53ac-47fc-9d93-bfc2fd82bb8e",
+    "slug": "sani-umar-bala",
+    "full_name": "Sani Umar Bala",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/7.jpg"
+  },
+  {
+    "id": "1ad28feb-00bb-4efa-871d-a7fc012caf99",
+    "slug": "bello-a-kaoje",
+    "full_name": "Bello A Kaoje",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/19.jpg"
+  },
+  {
+    "id": "f6e102da-1ec9-4fb0-9365-cd8acf1bff19",
+    "slug": "abubakar-hassan-nalaraba",
+    "full_name": "Abubakar Hassan Nalaraba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/23.jpg"
+  },
+  {
+    "id": "2bb1eb88-8883-4969-a6aa-b8de986c115a",
+    "slug": "lawan-shettima-ali",
+    "full_name": "Lawan Shettima Ali",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/30.jpg"
+  },
+  {
+    "id": "01f72a06-8406-4811-a8e6-7545b4669499",
+    "slug": "david-abel-fuoh",
+    "full_name": "David Abel Fuoh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/32.jpg"
+  },
+  {
+    "id": "1eaa78d0-54aa-420e-a533-c309ee2a0ecd",
+    "slug": "alex-egbona-egbona",
+    "full_name": "Alex Egbona Egbona",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/34.jpg"
+  },
+  {
+    "id": "bfa7684e-a7c5-44d6-8128-922ec8eb94a3",
+    "slug": "adedeji-stanley-olajide",
+    "full_name": "Adedeji Stanley Olajide",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/38.jpg"
+  },
+  {
+    "id": "19b857d4-b5bf-4033-af08-7034c47945da",
+    "slug": "adeyemi-taofeek-alli",
+    "full_name": "Adeyemi Taofeek Alli",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/49.jpg"
+  },
+  {
+    "id": "10ca9278-5dc6-475a-92db-29f21253f847",
+    "slug": "ozurigbo-ugonna",
+    "full_name": "Ozurigbo Ugonna",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/56.jpg"
+  },
+  {
+    "id": "c377a2af-d8be-4016-8f23-f540ebe1b5ab",
+    "slug": "sada-soli",
+    "full_name": "Sada Soli",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/57.jpg"
+  },
+  {
+    "id": "222b6cf0-5b42-49ee-93ad-7cfb70ea677b",
+    "slug": "sununu-tanko-yusuf",
+    "full_name": "Sununu Tanko Yusuf",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/58.jpg"
+  },
+  {
+    "id": "7cccdc0d-15da-4e7d-aae1-c7e9d3034bbe",
+    "slug": "awajiinombek-dagomie-abiante",
+    "full_name": "Awaji-inombek Dagomie Abiante",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/61.jpg"
+  },
+  {
+    "id": "1d0b4109-1694-400b-8e0a-040281f2f84e",
+    "slug": "nnolim-john-nnaji",
+    "full_name": "Nnolim John Nnaji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/63.jpg"
+  },
+  {
+    "id": "e60de7bd-533f-491d-9722-9e6ce5389a35",
+    "slug": "gagdi-adamu-yusuf",
+    "full_name": "Gagdi Adamu Yusuf",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/64.jpg"
+  },
+  {
+    "id": "89a61c57-98ea-4dcf-bdf4-b90b884afe8b",
+    "slug": "abiola-peter-makinde",
+    "full_name": "Abiola Peter Makinde",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/71.jpg"
+  },
+  {
+    "id": "395079b1-5c40-4870-b74b-33c8e6b022d5",
+    "slug": "akinola-adekunle-alabi",
+    "full_name": "Akinola Adekunle Alabi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/75.jpg"
+  },
+  {
+    "id": "9bd99d9f-e9b7-490c-9d34-fadb91ee9378",
+    "slug": "taofeek-abimbola-ajilesoro",
+    "full_name": "Taofeek Abimbola Ajilesoro",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/91.jpg"
+  },
+  {
+    "id": "2d68c688-c211-4862-a348-17e0f8f0ef44",
+    "slug": "abbas-tajudeen",
+    "full_name": "Abbas Tajudeen",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/92.jpg"
+  },
+  {
+    "id": "fb6cec11-7935-4319-85de-4b36c11532e0",
+    "slug": "ali-ibrahim-abdullahi",
+    "full_name": "Ali Ibrahim Abdullahi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/96.jpg"
+  },
+  {
+    "id": "a6613ab8-5534-483b-8ba1-225c8d6387ab",
+    "slug": "olufemi-richard-bamisile",
+    "full_name": "Olufemi Richard Bamisile",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/104.jpg"
+  },
+  {
+    "id": "5f3b316e-a19d-42f9-978e-5abba5e4dca2",
+    "slug": "anayo-edwin-nwonu",
+    "full_name": "Anayo Edwin Nwonu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/108.jpg"
+  },
+  {
+    "id": "f0455b8e-34d6-4725-8c13-b6880646d223",
+    "slug": "francis-ejiroghene-waive",
+    "full_name": "Francis Ejiroghene Waive",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/111.jpg"
+  },
+  {
+    "id": "ee5a703b-b38e-456d-826d-476a549585a1",
+    "slug": "beni-butmak-lar",
+    "full_name": "Beni Butmak Lar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/113.jpg"
+  },
+  {
+    "id": "9e32604e-552b-4238-b880-b48d38be92cf",
+    "slug": "yusuf-ahmad-badau",
+    "full_name": "Yusuf Ahmad Badau",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/114.jpg"
+  },
+  {
+    "id": "8e4f1c65-ec49-4eac-bef2-48c65bfd94ac",
+    "slug": "aliyu-betara-muktar",
+    "full_name": "Aliyu Betara Muktar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/122.jpg"
+  },
+  {
+    "id": "b302d26f-de9f-4e7f-8c75-08d9cb8af77b",
+    "slug": "olumide-babatunde-osoba",
+    "full_name": "Olumide Babatunde Osoba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/131.jpg"
+  },
+  {
+    "id": "9e47b167-fc37-45a1-b950-e893c42054e8",
+    "slug": "dachung-musa-bagos",
+    "full_name": "Dachung Musa Bagos",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/136.jpg"
+  },
+  {
+    "id": "a101a650-4af8-457c-bbb4-fbc50341c0e9",
+    "slug": "olubunmi-tunjiojo",
+    "full_name": "Olubunmi Tunji-ojo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/138.jpg"
+  },
+  {
+    "id": "619504d9-6d2c-4874-bc28-80cb88f69528",
+    "slug": "ibrahim-almustapha-aliyu",
+    "full_name": "Ibrahim Almustapha Aliyu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/140.jpg"
+  },
+  {
+    "id": "fe539710-c633-4716-ad96-a0affade96a4",
+    "slug": "bamidele-salam",
+    "full_name": "Bamidele Salam",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/141.jpg"
+  },
+  {
+    "id": "9d3423de-bb51-4197-af2b-e5d9c14924c1",
+    "slug": "kabir-tukura-ibrahim",
+    "full_name": "Kabir Tukura Ibrahim",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/148.jpg"
+  },
+  {
+    "id": "360a26d8-585f-4d7d-a489-ad3ade9c66b2",
+    "slug": "benjamin-okezie-kalu",
+    "full_name": "Benjamin Okezie Kalu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/149.jpg"
+  },
+  {
+    "id": "df8b19d5-19e7-448c-8b6f-9818123afd86",
+    "slug": "adewunmi-oriyomi-onanuga",
+    "full_name": "Adewunmi Oriyomi Onanuga",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/151.jpg"
+  },
+  {
+    "id": "9cd4b2c5-8f35-4b5d-88a6-2179a15d30c4",
+    "slug": "amos-gwamna-magaji",
+    "full_name": "Amos Gwamna Magaji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/154.jpg"
+  },
+  {
+    "id": "e4abf628-72e1-424a-bfe2-0bfd5af71170",
+    "slug": "aliu-ademorin-kuye",
+    "full_name": "Aliu Ademorin Kuye",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/157.jpg"
+  },
+  {
+    "id": "6c2bdc57-caba-49bf-80d1-44cd0a1f7a5f",
+    "slug": "ismail-kayode-tijani",
+    "full_name": "Ismail Kayode Tijani",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/162.jpg"
+  },
+  {
+    "id": "4ba28b88-dfe1-44d2-ae5a-ad4191658507",
+    "slug": "ereyitomi-thomas",
+    "full_name": "Ereyitomi Thomas",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/171.jpg"
+  },
+  {
+    "id": "de056b6d-a8ad-4261-bdaf-92ff67231add",
+    "slug": "saidu-musa-abdullahi",
+    "full_name": "Saidu Musa Abdullahi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/172.jpg"
+  },
+  {
+    "id": "45360ea4-5eb9-48ec-92f1-2babb00499d6",
+    "slug": "mohammed-omar-bio",
+    "full_name": "Mohammed Omar Bio",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/174.jpg"
+  },
+  {
+    "id": "c579b7f4-dbca-4db8-bc87-bf09cde64ace",
+    "slug": "agbedi-yeitiemone-frederick",
+    "full_name": "Agbedi Yeitiemone Frederick",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/177.jpg"
+  },
+  {
+    "id": "970a9b49-fff0-4a40-9fd1-26757baa82ec",
+    "slug": "nazifi-sani",
+    "full_name": "Nazifi Sani",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/183.jpg"
+  },
+  {
+    "id": "0c4463fc-070e-4b92-ac8f-3a43f066d9b0",
+    "slug": "adelegbe-emmanuel-oluwatimehin",
+    "full_name": "Adelegbe Emmanuel Oluwatimehin",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/184.jpg"
+  },
+  {
+    "id": "0b328c7f-4570-4726-ac40-712b241298a2",
+    "slug": "daniel-effiong-asuquo",
+    "full_name": "Daniel Effiong Asuquo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/192.jpg"
+  },
+  {
+    "id": "a44cd57b-228a-42e8-80ef-f1951f5bc56a",
+    "slug": "abdulkadir-rahis",
+    "full_name": "Abdulkadir Rahis",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/197.jpg"
+  },
+  {
+    "id": "aa1cfdf8-78c2-4a0e-a7fc-04e1e9cf72c0",
+    "slug": "moshood-kayode-akiolu",
+    "full_name": "Moshood Kayode Akiolu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/203.jpg"
+  },
+  {
+    "id": "62f5a8d9-243e-475e-96e7-967209d33c0c",
+    "slug": "jafaru-mohammed",
+    "full_name": "Jafaru Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/217.jpg"
+  },
+  {
+    "id": "07320f71-8e99-4a22-a023-eb722fd76386",
+    "slug": "ibrahim-ayokunle-isiaka",
+    "full_name": "Ibrahim Ayokunle Isiaka",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/221.jpg"
+  },
+  {
+    "id": "e9508117-fa86-457c-bcfd-35a132cc437e",
+    "slug": "unyime-josiah-idem",
+    "full_name": "Unyime Josiah Idem",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/226.jpg"
+  },
+  {
+    "id": "28eed381-61e1-4bb5-85bb-f5e7da2015c5",
+    "slug": "abdullahi-mamudu",
+    "full_name": "Abdullahi Mamudu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/238.jpg"
+  },
+  {
+    "id": "f0f8be31-c6dc-4090-a732-30187c938719",
+    "slug": "essien-ekpenyong-ayi",
+    "full_name": "Essien Ekpenyong Ayi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/244.jpg"
+  },
+  {
+    "id": "0e296d3c-4d3c-4fe5-9364-3a6d498162b2",
+    "slug": "tijjani-zannah-zakariya",
+    "full_name": "Tijjani Zannah Zakariya",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/257.jpg"
+  },
+  {
+    "id": "d66cd012-c8b7-43b2-ac2f-403148014feb",
+    "slug": "david-idris-zacharias",
+    "full_name": "David Idris Zacharias",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/263.jpg"
+  },
+  {
+    "id": "7c2a7c46-cb16-4cd9-a164-4e322e4141ac",
+    "slug": "dumnamene-robinson-dekor",
+    "full_name": "Dumnamene Robinson Dekor",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/265.jpg"
+  },
+  {
+    "id": "967f33e9-e86c-4383-8f9e-ba909ec6736d",
+    "slug": "abiodun-james-faleke",
+    "full_name": "Abiodun James Faleke",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/268.jpg"
+  },
+  {
+    "id": "6ae9adb6-1c63-4ecc-b8d8-0063e835d668",
+    "slug": "leke-joseph-abejide",
+    "full_name": "Leke Joseph Abejide",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/269.jpg"
+  },
+  {
+    "id": "42148322-079a-4d7a-aafc-c8cf718a7612",
+    "slug": "prince-olaide-adewale-akinremi",
+    "full_name": "Prince Olaide Adewale Akinremi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/278.jpg"
+  },
+  {
+    "id": "29a43bac-3647-4e20-9b18-d0f96c06f0a8",
+    "slug": "solomon-t-bob",
+    "full_name": "Solomon T Bob",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/282.jpg"
+  },
+  {
+    "id": "8bdd4468-ecc2-4294-8e91-b455752a141f",
+    "slug": "kabiru-alhassan-usman-rurum",
+    "full_name": "Kabiru Alhassan Usman Rurum",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/292.jpg"
+  },
+  {
+    "id": "6e7d6df6-06a7-43f1-9f69-02029089c3da",
+    "slug": "tongo-bauchi-yaya",
+    "full_name": "Tongo Bauchi Yaya",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/295.jpg"
+  },
+  {
+    "id": "91fbee94-f7ba-4245-9a18-22fbc835837e",
+    "slug": "etaba-michael-irom",
+    "full_name": "Etaba Michael Irom",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/300.jpg"
+  },
+  {
+    "id": "6f1b4a7d-3009-4142-beb3-462b72e34ac0",
+    "slug": "babajimi-adegoke-benson",
+    "full_name": "Babajimi Adegoke Benson",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/308.jpg"
+  },
+  {
+    "id": "8778106b-e691-43c2-a45a-094c6eb7156d",
+    "slug": "tasir-olawale-raji",
+    "full_name": "Tasir Olawale Raji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/315.jpg"
+  },
+  {
+    "id": "bbbb23b7-94a4-416d-a6df-a94b8247f311",
+    "slug": "abubakar-hassan-fulata",
+    "full_name": "Abubakar Hassan Fulata",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/320.jpg"
+  },
+  {
+    "id": "6433becd-4b36-460a-9382-36664f391e83",
+    "slug": "adebayo-olusegun-balogun",
+    "full_name": "Adebayo Olusegun Balogun",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/326.jpg"
+  },
+  {
+    "id": "ae585a33-1e06-4b2a-a7ee-9b68afc45966",
+    "slug": "kingsley-ogundu-chinda",
+    "full_name": "Kingsley Ogundu Chinda",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/327.jpg"
+  },
+  {
+    "id": "97b699d8-8f94-478a-a5dc-fd49b201a8d8",
+    "slug": "ahmad-abdullahi-kalambaina",
+    "full_name": "Ahmad Abdullahi Kalambaina",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/329.jpg"
+  },
+  {
+    "id": "fad8c948-43ea-42ba-b03d-2ffb595410c2",
+    "slug": "nicholas-ebomo-mutu",
+    "full_name": "Nicholas Ebomo Mutu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/334.jpg"
+  },
+  {
+    "id": "b9a464e6-ec7f-46b1-92d2-400a78694ded",
+    "slug": "abubakar-sarki-dahiru",
+    "full_name": "Abubakar Sarki Dahiru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/336.jpg"
+  },
+  {
+    "id": "92478183-15d2-4021-bc08-b0e3c0952a63",
+    "slug": "kwamoti-bitrus-laori",
+    "full_name": "Kwamoti Bitrus Laori",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/347.jpg"
+  },
+  {
+    "id": "bcf4f469-f731-4df7-9c49-aad230fc7164",
+    "slug": "akeem-adeniyi-adeyemi",
+    "full_name": "Akeem Adeniyi Adeyemi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/350.jpg"
+  },
+  {
+    "id": "056c010b-2409-45d6-96c8-02ca6d6ed49c",
+    "slug": "abass-adekunle-adigun",
+    "full_name": "Abass Adekunle Adigun",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/351.jpg"
+  },
+  {
+    "id": "c08673ef-ae27-4e1f-b9c0-edd54bada218",
+    "slug": "abdulmumin-ari-mohammed",
+    "full_name": "Abdulmumin Ari Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/357.jpg"
+  },
+  {
+    "id": "9e1cfaa3-b5b2-4c31-a8a7-8998e460f318",
+    "slug": "ahmed-idris-wase",
+    "full_name": "Ahmed Idris Wase",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/360.jpg"
+  },
+  {
+    "id": "01dae145-1a79-4189-a2b8-6d96f677ee14",
+    "slug": "gaza-jonathan-gbefwi",
+    "full_name": "Gaza Jonathan Gbefwi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/364.jpg"
+  },
+  {
+    "id": "28cef319-4f4a-4dac-bf70-575370453e67",
+    "slug": "blessing-onyeche-onuh",
+    "full_name": "Blessing Onyeche Onuh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/370.jpg"
+  },
+  {
+    "id": "875e56ab-5448-41e7-87b3-76158962e0fb",
+    "slug": "akanni-enitan-dolapobadru",
+    "full_name": "Akanni Enitan Dolapo-badru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/371.jpg"
+  },
+  {
+    "id": "89a31de7-0f7f-49ef-96c6-320630b3abfd",
+    "slug": "tijjani-abdulkadir-jobe",
+    "full_name": "Tijjani Abdulkadir Jobe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/372.jpg"
+  },
+  {
+    "id": "f5fcabc8-89e8-45ef-a317-7d34d7235f63",
+    "slug": "dennis-idahosa",
+    "full_name": "Dennis Idahosa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/383.jpg"
+  },
+  {
+    "id": "59cc9ae0-9e0d-4d9f-850c-eb898d525199",
+    "slug": "satomi-alhaji-ahmad",
+    "full_name": "Satomi Alhaji Ahmad",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/387.jpg"
+  },
+  {
+    "id": "69a4d487-a187-43da-bfd0-8ec5dc38f17b",
+    "slug": "abdulraheem-olatunji-olawuyi",
+    "full_name": "Abdulraheem Olatunji Olawuyi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/400.jpg"
+  },
+  {
+    "id": "2c344f5a-324a-46f3-8fb2-e0fc5c56298b",
+    "slug": "agah-avia-musa",
+    "full_name": "Agah Avia Musa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/403.jpg"
+  },
+  {
+    "id": "fae71611-27b5-4d20-a57d-f652724bfa19",
+    "slug": "mallam-bukar-gana",
+    "full_name": "Mallam Bukar Gana",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/409.jpg"
+  },
+  {
+    "id": "4a0fffef-0df1-44ec-9a65-c14cd146c593",
+    "slug": "kumo-usman-bello",
+    "full_name": "Kumo Usman Bello",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/416.jpg"
+  },
+  {
+    "id": "468cfaa5-a4db-438a-8bc5-c88ad4d5f65b",
+    "slug": "abdullahi-idris-garba",
+    "full_name": "Abdullahi Idris Garba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/420.jpg"
+  },
+  {
+    "id": "6c9f70a2-2508-4f7a-9187-ea45c3f6aa87",
+    "slug": "oluwole-oke",
+    "full_name": "Oluwole Oke",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/428.jpg"
+  },
+  {
+    "id": "2c95fb3f-776a-4d0b-9d4a-59b8b4ebe842",
+    "slug": "yusuf-miga",
+    "full_name": "Yusuf Miga",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/429.jpg"
+  },
+  {
+    "id": "df8b2d72-fbaf-4266-a154-a3870df8312f",
+    "slug": "abubakar-kabir-abubakar",
+    "full_name": "Abubakar Kabir Abubakar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/468.jpg"
+  },
+  {
+    "id": "302e2c46-2d9c-4677-a3ce-e7633958b1c9",
+    "slug": "usman-ibrahim-auyo",
+    "full_name": "Usman Ibrahim Auyo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/470.jpg"
+  },
+  {
+    "id": "095a0c74-0310-4732-a08f-a98c5d240652",
+    "slug": "lawal-muhammadu-idirisu",
+    "full_name": "Lawal Muhammadu Idirisu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/472.jpg"
+  },
+  {
+    "id": "1359cb34-159d-4289-90f5-0933b09afdb6",
+    "slug": "bello-shinkafi-hassan",
+    "full_name": "Bello Shinkafi Hassan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/473.jpg"
+  },
+  {
+    "id": "433aa420-04c2-46b9-a79f-62760c8176b3",
+    "slug": "kabiru-amadu",
+    "full_name": "Kabiru Amadu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/474.jpg"
+  },
+  {
+    "id": "8703cdad-daba-4c7e-82aa-e445f05febd7",
+    "slug": "bashiru-ayinla-dawodu",
+    "full_name": "Bashiru Ayinla Dawodu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/475.jpg"
+  },
+  {
+    "id": "56d2571a-e369-489b-ab67-26a5755811c3",
+    "slug": "sulaiman-gumi-abubakar",
+    "full_name": "Sulaiman Gumi Abubakar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/477.jpg"
+  },
+  {
+    "id": "d300d343-53aa-4d34-92d7-b2a5ca3f4ad7",
+    "slug": "boma-goodhead",
+    "full_name": "Boma Goodhead",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/480.jpg"
+  },
+  {
+    "id": "d787d04d-3e06-49da-a97c-2f324665cac9",
+    "slug": "alhassan-ado-garba",
+    "full_name": "Alhassan Ado Garba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/488.jpg"
+  },
+  {
+    "id": "a8dde051-910e-478d-87a2-cc068d0f2956",
+    "slug": "boniface-sunday-emerengwa",
+    "full_name": "Boniface Sunday Emerengwa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/490.jpg"
+  },
+  {
+    "id": "255dfbee-1fe6-4494-af04-3695bb1edc87",
+    "slug": "yusuf-shitu-galambi",
+    "full_name": "Yusuf Shitu Galambi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/497.jpg"
+  },
+  {
+    "id": "70af8e3a-8388-45d6-8b18-f3af36514bfd",
+    "slug": "ahmed-munir",
+    "full_name": "Ahmed Munir",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/500.jpg"
+  },
+  {
+    "id": "32339ed3-764d-4e75-9cdc-c9249af77d13",
+    "slug": "sanni-abdulraheem",
+    "full_name": "Sanni Abdulraheem",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/515.jpg"
+  },
+  {
+    "id": "9abb5e32-6395-4288-91c6-68a36b1e6719",
+    "slug": "aminu-jaji",
+    "full_name": "Aminu Jaji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/516.jpg"
+  },
+  {
+    "id": "95f2e05d-99f3-404a-98e9-77657bde1bc0",
+    "slug": "okpolupm-etteh",
+    "full_name": "Okpolupm Etteh",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/517.jpg"
+  },
+  {
+    "id": "5f66b4a7-b2ff-4794-92c1-287b44c1e7d9",
+    "slug": "saad-taura",
+    "full_name": "Sa'ad Taura",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/522.jpg"
+  },
+  {
+    "id": "b84286e2-852f-4a73-904d-3f7777e171b8",
+    "slug": "ugochinyere-onyinye-ikeagwuonu",
+    "full_name": "Ugochinyere Onyinye Ikeagwuonu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/524.jpg"
+  },
+  {
+    "id": "1f475511-caac-4d60-adb4-afaaa92cf00d",
+    "slug": "ifeanyi-peter-uzokwe",
+    "full_name": "Ifeanyi Peter Uzokwe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/525.jpg"
+  },
+  {
+    "id": "a0e5e460-0574-41c8-9ac2-2675dcb50049",
+    "slug": "balele-aminu",
+    "full_name": "Balele Aminu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/526.jpg"
+  },
+  {
+    "id": "cf28e7b5-34c0-4cfb-8a54-9f04817bb800",
+    "slug": "elrasheed-abdullahi",
+    "full_name": "El-rasheed Abdullahi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/527.jpg"
+  },
+  {
+    "id": "eba1d739-d79e-4d61-9cab-066afb86f737",
+    "slug": "mansur-musa",
+    "full_name": "Mansur Musa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/529.jpg"
+  },
+  {
+    "id": "d779117d-92c6-4664-92e4-88dd932e8343",
+    "slug": "mohammed-chiroma",
+    "full_name": "Mohammed Chiroma",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/530.jpg"
+  },
+  {
+    "id": "723df82d-0b04-4e51-9a48-3b79d4c037de",
+    "slug": "jonas-okeke",
+    "full_name": "Jonas Okeke",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/531.jpg"
+  },
+  {
+    "id": "5785568f-b66c-4d35-b03f-8aa515c0ae08",
+    "slug": "isaac-kwallu",
+    "full_name": "Isaac Kwallu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/534.jpg"
+  },
+  {
+    "id": "398dbe0a-f091-4eb8-90be-f3784ed370cb",
+    "slug": "peter-gyendeng",
+    "full_name": "Peter Gyendeng",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/535.jpg"
+  },
+  {
+    "id": "90c3bb0c-0b2b-4bf4-91b3-c64e70843574",
+    "slug": "dominic-okafor",
+    "full_name": "Dominic Okafor",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/538.jpg"
+  },
+  {
+    "id": "4f89d2a8-bb88-4a54-af20-a49bbea477df",
+    "slug": "ahmed-aliyu",
+    "full_name": "Ahmed Aliyu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/539.jpg"
+  },
+  {
+    "id": "0532821b-d1e3-44a4-9ed8-133201e33ebc",
+    "slug": "usman-murtala",
+    "full_name": "Usman Murtala",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/541.jpg"
+  },
+  {
+    "id": "b20bfd60-e977-44ed-99c9-04efd38d1b00",
+    "slug": "ekene-abubakar-adams",
+    "full_name": "Ekene Abubakar Adams",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/542.jpg"
+  },
+  {
+    "id": "53bb73eb-632b-4ca9-b683-7fdbf13c0cd3",
+    "slug": "uchenna-okonkwo",
+    "full_name": "Uchenna Okonkwo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/543.jpg"
+  },
+  {
+    "id": "d8c5d140-fb4f-4537-a973-ad451e00a580",
+    "slug": "mathew-nwogu",
+    "full_name": "Mathew Nwogu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/545.jpg"
+  },
+  {
+    "id": "e3ad9716-a3dc-49ab-8f7c-57d851ef260f",
+    "slug": "jeremiah-umaru",
+    "full_name": "Jeremiah Umaru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/549.jpg"
+  },
+  {
+    "id": "68143a2b-8961-47a7-9591-58ad7013c189",
+    "slug": "sunday-umeha",
+    "full_name": "Sunday Umeha",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/550.jpg"
+  },
+  {
+    "id": "7c742410-2db4-4bb4-a47a-353b8e3ef69d",
+    "slug": "ajilo-umar",
+    "full_name": "Ajilo Umar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/551.jpg"
+  },
+  {
+    "id": "a1018389-f260-4dd5-b3ce-62411d108211",
+    "slug": "muhammed-ozigi",
+    "full_name": "Muhammed Ozigi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/553.jpg"
+  },
+  {
+    "id": "0a78b27e-d87d-4542-b24a-ecc44638801f",
+    "slug": "salisu-yusuf",
+    "full_name": "Salisu Yusuf",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/554.jpg"
+  },
+  {
+    "id": "6fdd4b6d-18c1-4b4f-8e73-d809bea8b12e",
+    "slug": "ismail-dalha",
+    "full_name": "Ismail Dalha",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/555.jpg"
+  },
+  {
+    "id": "0e1fac41-30cc-4cf3-b181-76e033bf3c0d",
+    "slug": "aliyu-iliyasu",
+    "full_name": "Aliyu Iliyasu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/556.jpg"
+  },
+  {
+    "id": "a2f425df-03bd-41bb-bf94-9e37935115a8",
+    "slug": "abdulmalik-zubairu",
+    "full_name": "Abdulmalik Zubairu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/558.jpg"
+  },
+  {
+    "id": "8e24048c-bcb8-4b92-8879-11ac700dcb12",
+    "slug": "hassan-mohammed",
+    "full_name": "Hassan Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/562.jpg"
+  },
+  {
+    "id": "06365cda-a5db-4e6b-8f8c-f447e658b517",
+    "slug": "ayuba-dampar",
+    "full_name": "Ayuba Dampar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/563.jpg"
+  },
+  {
+    "id": "921bab26-6aa1-42ac-9293-b9fafb38bca9",
+    "slug": "george-olawande",
+    "full_name": "George Olawande",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/565.jpg"
+  },
+  {
+    "id": "3387b028-69cb-45af-a8f1-95d2b0e48082",
+    "slug": "abdulraheem-abdulmaleek",
+    "full_name": "Abdulraheem Abdulmaleek",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/568.jpg"
+  },
+  {
+    "id": "8794df38-56e1-4429-8b30-b8f0e2a71eb3",
+    "slug": "adewale-hameed",
+    "full_name": "Adewale Hameed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/569.jpg"
+  },
+  {
+    "id": "bf2031c8-c863-4cd4-9154-5755751117dc",
+    "slug": "saleh-shehu",
+    "full_name": "Saleh Shehu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/570.jpg"
+  },
+  {
+    "id": "8d2cacee-8feb-4bd4-8bb0-8bb4a9ed7c99",
+    "slug": "offiono-godwin",
+    "full_name": "Offiono Godwin",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/571.jpg"
+  },
+  {
+    "id": "edf602eb-7d55-485c-9590-993f1486930d",
+    "slug": "emeka-idu",
+    "full_name": "Emeka Idu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/573.jpg"
+  },
+  {
+    "id": "9a26eb21-f587-4d53-a86a-7cd709961fd8",
+    "slug": "mohammed-salihu",
+    "full_name": "Mohammed Salihu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/574.jpg"
+  },
+  {
+    "id": "073656d2-7baf-4a7f-82bf-55f4cbc05010",
+    "slug": "obinna-aguocha",
+    "full_name": "Obinna Aguocha",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/575.jpg"
+  },
+  {
+    "id": "12bc442a-4431-42bb-b0df-7902e1c14b68",
+    "slug": "yusuf-datti",
+    "full_name": "Yusuf Datti",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/580.jpg"
+  },
+  {
+    "id": "ae95bf3f-29d4-4bbf-834a-993c8a7c3f7e",
+    "slug": "paul-nnamchi",
+    "full_name": "Paul Nnamchi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/581.jpg"
+  },
+  {
+    "id": "4c1dbcec-34a7-4e53-80be-31a5f1f6288c",
+    "slug": "sani-adamu",
+    "full_name": "Sani Adamu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/582.jpg"
+  },
+  {
+    "id": "30af5a1c-7f66-4b25-a9c5-74cea9ea63c6",
+    "slug": "anthony-adebayo-adepoju",
+    "full_name": "Anthony Adebayo Adepoju",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/583.jpg"
+  },
+  {
+    "id": "587a698c-0d1b-4ba9-bd54-d2a1b7c7cce1",
+    "slug": "ganiyu-ayuba",
+    "full_name": "Ganiyu Ayuba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/584.jpg"
+  },
+  {
+    "id": "ef57ea74-2700-4b9e-a0ca-945204543d59",
+    "slug": "abdullahi-dabai",
+    "full_name": "Abdullahi Dabai",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/586.jpg"
+  },
+  {
+    "id": "5ee559e3-9759-42b5-aba1-d5642c242672",
+    "slug": "sesi-whingan",
+    "full_name": "Sesi Whingan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/589.jpg"
+  },
+  {
+    "id": "1098556f-1976-4e9f-8a56-9a658eae6793",
+    "slug": "adamu-tanko",
+    "full_name": "Adamu Tanko",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/592.jpg"
+  },
+  {
+    "id": "93719ba9-daf6-4177-9e1e-ec17fb27d350",
+    "slug": "thaddeus-atta",
+    "full_name": "Thaddeus Atta",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/593.jpg"
+  },
+  {
+    "id": "813e37fa-f154-443e-b71c-145d49f26e06",
+    "slug": "oluwaseyi-sowumi",
+    "full_name": "Oluwaseyi Sowumi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/594.jpg"
+  },
+  {
+    "id": "6de6d3a1-aba4-4279-8b69-c22f3559aa13",
+    "slug": "suleiman-richifa-yahaya",
+    "full_name": "Suleiman Richifa Yahaya",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/595.jpg"
+  },
+  {
+    "id": "3aa10c04-0099-4391-b59e-a6772e918745",
+    "slug": "olufemi-ogunbanwo",
+    "full_name": "Olufemi Ogunbanwo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/596.jpg"
+  },
+  {
+    "id": "8f690bc8-652e-45b7-9dc6-5efbd0e869ab",
+    "slug": "yakubu-adamu",
+    "full_name": "Yakubu Adamu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/597.jpg"
+  },
+  {
+    "id": "68fe3d03-da6a-44b8-8930-b25881bbdbed",
+    "slug": "bashir-zubairu",
+    "full_name": "Bashir Zubairu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/598.jpg"
+  },
+  {
+    "id": "158a0984-31b9-47ae-8e9c-9d0697858f87",
+    "slug": "abdulkadir-danbuya",
+    "full_name": "Abdulkadir Danbuya",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/599.jpg"
+  },
+  {
+    "id": "658a84fa-d6db-466c-8629-fdbf1d3c5c0b",
+    "slug": "ime-bassey-okon",
+    "full_name": "Ime Bassey Okon",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/601.jpg"
+  },
+  {
+    "id": "5eb7326a-5782-4a69-a9d5-e5775d1a4709",
+    "slug": "joshua-gana",
+    "full_name": "Joshua Gana",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/602.jpg"
+  },
+  {
+    "id": "fc1902d8-62b4-4a5c-afce-836a992efb9e",
+    "slug": "yusuf-bashir",
+    "full_name": "Yusuf Bashir",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/604.jpg"
+  },
+  {
+    "id": "348349fe-b840-4410-bb79-b9537f44375c",
+    "slug": "chinedu-ogah",
+    "full_name": "Chinedu Ogah",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/606.jpg"
+  },
+  {
+    "id": "7947b802-0cd0-4773-bd37-75bd74ca2c8c",
+    "slug": "jonathan-ajirioghene-ukodhiko",
+    "full_name": "Jonathan Ajirioghene Ukodhiko",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/608.jpg"
+  },
+  {
+    "id": "6e247a69-5442-49d2-a044-91a94303319a",
+    "slug": "peter-u-aniekwe",
+    "full_name": "Peter U. Aniekwe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/610.jpg"
+  },
+  {
+    "id": "b87df2bd-f9e7-4dc6-97e9-acff4f594492",
+    "slug": "ismail-modibo-musa",
+    "full_name": "Ismail Modibo Musa",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/611.jpg"
+  },
+  {
+    "id": "6a46e3c9-4a07-4c6c-8c10-a21873e9b9bd",
+    "slug": "olaide-yusuf-mohammed",
+    "full_name": "Olaide Yusuf Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/612.jpg"
+  },
+  {
+    "id": "780ce710-da19-4b9c-93ab-e9f597596a69",
+    "slug": "ojema-ojotu",
+    "full_name": "Ojema Ojotu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/614.jpg"
+  },
+  {
+    "id": "47385222-ddcb-4fbb-ac6c-14e8dbff4e05",
+    "slug": "okunjimi-john-odimayo",
+    "full_name": "Okunjimi John Odimayo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/615.jpg"
+  },
+  {
+    "id": "678eb2ed-a37d-406b-8f83-e9eaec02e131",
+    "slug": "sunday-anamero-dekeri",
+    "full_name": "Sunday Anamero Dekeri",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/616.jpg"
+  },
+  {
+    "id": "0b865b35-5b7f-4d04-bc47-070113c7e35d",
+    "slug": "abonsizibe-oforji-obuku",
+    "full_name": "Abonsizibe Oforji Obuku",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/618.jpg"
+  },
+  {
+    "id": "b2c02e6a-5927-42c7-bd6f-578ebb2eca4e",
+    "slug": "hassan-shehu-hussain",
+    "full_name": "Hassan Shehu Hussain",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/620.jpg"
+  },
+  {
+    "id": "b7fbd180-a8fc-4d15-a9d0-e6cc110e2505",
+    "slug": "aminu-chindo",
+    "full_name": "Aminu Chindo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/621.jpg"
+  },
+  {
+    "id": "167622c4-f252-40dc-a43c-4e1801857853",
+    "slug": "marie-enenimiete-ebikake",
+    "full_name": "Marie Enenimiete Ebikake",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/625.jpg"
+  },
+  {
+    "id": "43ca96a8-99c3-4323-8ef7-aaf5cf44a751",
+    "slug": "allison-igbiks-anderson",
+    "full_name": "Allison Igbiks Anderson",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/626.jpg"
+  },
+  {
+    "id": "e32c914f-0fbf-4948-9d74-6c76fd08929e",
+    "slug": "aminu-jamo-daura",
+    "full_name": "Aminu Jamo Daura",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/627.jpg"
+  },
+  {
+    "id": "03a1ce9e-31ff-48c8-b575-b5fb6488d371",
+    "slug": "billy-famous-osawaru",
+    "full_name": "Billy Famous Osawaru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/629.jpg"
+  },
+  {
+    "id": "573d63ff-166a-40d4-b623-b9df0a0d934b",
+    "slug": "david-agada-ogewu",
+    "full_name": "David Agada Ogewu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/631.jpg"
+  },
+  {
+    "id": "7cf87c1f-df2e-45cb-8940-8c7e5fcc902f",
+    "slug": "sunday-makanjuola-ojo",
+    "full_name": "Sunday Makanjuola Ojo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/633.jpg"
+  },
+  {
+    "id": "fd84ad4f-4977-4ab0-8a36-aa818e00d6a3",
+    "slug": "yusuf-alhaji-kabiru",
+    "full_name": "Yusuf Alhaji Kabiru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/635.jpg"
+  },
+  {
+    "id": "57911f8f-9e2f-4f9e-b3c2-ece6ed5795f6",
+    "slug": "hussaini-ahmed-abdulkarim",
+    "full_name": "Hussaini Ahmed Abdulkarim",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/638.jpg"
+  },
+  {
+    "id": "c9201e40-c1ca-4374-b98e-5571eb02f533",
+    "slug": "cornelius-abidun-aderin",
+    "full_name": "Cornelius Abidun Aderin",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/640.jpg"
+  },
+  {
+    "id": "3a11210d-2fee-4d72-8b23-06b6d9823fcd",
+    "slug": "martins-etim-esin",
+    "full_name": "Martins Etim Esin",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/641.jpg"
+  },
+  {
+    "id": "78b8b44f-9cfe-4e25-a9bc-29ca62d530c7",
+    "slug": "rodney-ebikebina-ambiowei",
+    "full_name": "Rodney Ebikebina Ambiowei",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/642.jpg"
+  },
+  {
+    "id": "12253db6-2001-4dcb-bcaf-f74fc8a23558",
+    "slug": "paul-asuquo-ekpo",
+    "full_name": "Paul Asuquo Ekpo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/643.jpg"
+  },
+  {
+    "id": "aa70c067-473d-4683-81b2-7f1f3a444bda",
+    "slug": "canice-moore-nwachukwu",
+    "full_name": "Canice Moore Nwachukwu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/644.jpg"
+  },
+  {
+    "id": "53dd374f-6919-4844-972a-0f6cc31878cb",
+    "slug": "obinna-ginger-onwusibe",
+    "full_name": "Obinna Ginger Onwusibe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/645.jpg"
+  },
+  {
+    "id": "62804fca-5d9a-46f6-b2ea-84f119bce0e6",
+    "slug": "fatima-talba",
+    "full_name": "Fatima Talba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/646.jpg"
+  },
+  {
+    "id": "4046cdd1-96b5-4e51-a12d-41454324ae0a",
+    "slug": "aminu-garu-alyi",
+    "full_name": "Aminu Garu Alyi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/649.jpg"
+  },
+  {
+    "id": "e840ab05-0842-4274-b150-549ca1d964df",
+    "slug": "mohammed-bassi",
+    "full_name": "Mohammed Bassi",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/650.jpg"
+  },
+  {
+    "id": "47f0e0c9-152e-4c5c-b08d-8d97b6a48549",
+    "slug": "adetola-kafilat-ogbara",
+    "full_name": "Adetola Kafilat Ogbara",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/653.jpg"
+  },
+  {
+    "id": "c8eb23a0-60a2-408c-b45c-cae15106eefe",
+    "slug": "adamu-hashimu",
+    "full_name": "Adamu Hashimu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/654.jpg"
+  },
+  {
+    "id": "7e5024e5-50b7-41fe-aa08-ecb4c4c7b45b",
+    "slug": "afolabi-moruf-afuape",
+    "full_name": "Afolabi Moruf Afuape",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/655.jpg"
+  },
+  {
+    "id": "6a464c38-97cf-4abe-9846-5a4d5f7c73d1",
+    "slug": "muhammed-buba-jajere",
+    "full_name": "Muhammed Buba Jajere",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/657.jpg"
+  },
+  {
+    "id": "08e59815-14d5-480d-8857-21a2089f8b3b",
+    "slug": "olafisoye-wasiu-akinmoyede",
+    "full_name": "Olafisoye Wasiu Akinmoyede",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/658.jpg"
+  },
+  {
+    "id": "dc27a7ba-fdf3-4a9b-a8ea-436a8b6a7446",
+    "slug": "mohammed-audu",
+    "full_name": "Mohammed Audu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/659.jpg"
+  },
+  {
+    "id": "4753c208-4818-409b-847f-e7f1b7b5987f",
+    "slug": "lukman-mudashiru",
+    "full_name": "Lukman Mudashiru",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/660.jpg"
+  },
+  {
+    "id": "6142cc03-7f22-4183-aed1-b40854bb0de7",
+    "slug": "ayodeji-alao",
+    "full_name": "Ayodeji Alao",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/661.jpg"
+  },
+  {
+    "id": "91e93d1d-9ee1-40b5-90ad-981f556b6e42",
+    "slug": "donald-ojogo",
+    "full_name": "Donald Ojogo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/664.jpg"
+  },
+  {
+    "id": "bcd1a53a-355d-46b4-9ee7-43c395942e4c",
+    "slug": "najimdeen-oyedeji",
+    "full_name": "Najimdeen Oyedeji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/665.jpg"
+  },
+  {
+    "id": "dec63d1f-2e3f-435a-97d7-3cb084e6def3",
+    "slug": "ayodele-adefiranye",
+    "full_name": "Ayodele Adefiranye",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/666.jpg"
+  },
+  {
+    "id": "2b363287-368c-4912-b9d5-ad010190be53",
+    "slug": "adefarati-adegboyega",
+    "full_name": "Adefarati Adegboyega",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/669.jpg"
+  },
+  {
+    "id": "93db23f9-c3bf-4350-a890-3f715b01b93b",
+    "slug": "adeboye-paul-kalejaiye",
+    "full_name": "Adeboye Paul Kalejaiye",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/674.jpg"
+  },
+  {
+    "id": "eecd1e01-0fea-442e-bf72-ccc5c7a636c5",
+    "slug": "aderemi-abasi-oseni",
+    "full_name": "Aderemi Abasi Oseni",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/675.jpg"
+  },
+  {
+    "id": "b73d29ea-d36b-462f-b7a8-a948c3b292e5",
+    "slug": "abdulhakeem-kamilu-ado",
+    "full_name": "Abdulhakeem Kamilu Ado",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/676.jpg"
+  },
+  {
+    "id": "0e760fe3-974f-455b-981b-564041704388",
+    "slug": "saadu-nabunkari",
+    "full_name": "Saadu Nabunkari",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/678.jpg"
+  },
+  {
+    "id": "ab9f91b4-52aa-40e3-bca7-c416c2f3f97e",
+    "slug": "ahmed-adam-saba",
+    "full_name": "Ahmed Adam Saba",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/680.jpg"
+  },
+  {
+    "id": "762ce16e-414a-434f-a77b-d6ba1297ba05",
+    "slug": "joseph-adegbesan",
+    "full_name": "Joseph Adegbesan",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/683.jpg"
+  },
+  {
+    "id": "6560985d-cadb-4078-b775-ca51617fbebb",
+    "slug": "bello-ambarura-isah",
+    "full_name": "Bello Ambarura Isah",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/684.jpg"
+  },
+  {
+    "id": "a386934f-a673-4dc5-ae07-70a26997913f",
+    "slug": "ahmed-doro-yusuf",
+    "full_name": "Ahmed Doro Yusuf",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/685.jpg"
+  },
+  {
+    "id": "68e6b5e6-de03-4b92-8ce2-8f107ecbbf21",
+    "slug": "abubakar-ahmad-mohammed",
+    "full_name": "Abubakar Ahmad Mohammed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/686.jpg"
+  },
+  {
+    "id": "fe6e4b2c-2768-422c-8b58-b07a18754850",
+    "slug": "aliyu-abdullahi-ahmed",
+    "full_name": "Aliyu Abdullahi Ahmed",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/687.jpg"
+  },
+  {
+    "id": "f0a529d8-202d-471a-ad85-35f4338e599d",
+    "slug": "julius-omozuanvbo-ihonvbere",
+    "full_name": "Julius Omozuanvbo Ihonvbere",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/688.jpg"
+  },
+  {
+    "id": "d185a6cd-b0f1-4907-9bdb-f9452be59410",
+    "slug": "erhiatake-ibori-suenu",
+    "full_name": "Erhiatake Ibori Suenu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/689.jpg"
+  },
+  {
+    "id": "1d51b2d3-9550-4d27-b117-a21abbaf26ea",
+    "slug": "chinwe-clara-nnabuife",
+    "full_name": "Chinwe Clara Nnabuife",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/691.jpg"
+  },
+  {
+    "id": "9c5f0f1f-0472-4227-9490-5ddd08b95fa5",
+    "slug": "simon-chukwuemeka-atigwe",
+    "full_name": "Simon Chukwuemeka Atigwe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/692.jpg"
+  },
+  {
+    "id": "b4b6d20f-f9ef-4aa4-83ce-db47c8116cd0",
+    "slug": "binos-dauda-yaroe",
+    "full_name": "Binos Dauda Yaroe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/87.jpg"
+  },
+  {
+    "id": "f9508bdc-de48-4894-9351-d8fd36250327",
+    "slug": "ishaku-elisha-cliff-abbo",
+    "full_name": "Ishaku Elisha Cliff Abbo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/303.jpg"
+  },
+  {
+    "id": "fc3614fa-8c22-4df1-b893-c63b7e02aca8",
+    "slug": "okechukwu-ezea",
+    "full_name": "Okechukwu Ezea",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/520.jpg"
+  },
+  {
+    "id": "661c5d5e-ff6b-4fc9-bff5-c2bb701a6bcc",
+    "slug": "williams-eteng-jonah",
+    "full_name": "Williams Eteng Jonah",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/557.jpg"
+  },
+  {
+    "id": "bc16c800-dc89-4e09-b87f-11eeb1fc79c1",
+    "slug": "adeniyi-ayodele-adegbonmire",
+    "full_name": "Adeniyi Ayodele Adegbonmire",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/672.jpg"
+  },
+  {
+    "id": "6106160f-2e67-4872-9608-0b39376ad6de",
+    "slug": "makki-yalleman-abubakar",
+    "full_name": "Makki Yalleman Abubakar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/12.jpg"
+  },
+  {
+    "id": "4870f8b8-d75f-443e-8f6d-e18708da86c3",
+    "slug": "emeka-martins-chinedu",
+    "full_name": "Emeka Martins Chinedu",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/118.jpg"
+  },
+  {
+    "id": "52628475-16e2-4486-8cc6-36895b4c309c",
+    "slug": "tolulope-tiwalola-akandesadipe",
+    "full_name": "Tolulope Tiwalola Akande-sadipe",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/209.jpg"
+  },
+  {
+    "id": "1982e358-8402-464b-be75-a395f2aa711e",
+    "slug": "khadija-waziri-bukar-abba-ibrahim",
+    "full_name": "Khadija Waziri Bukar Abba Ibrahim",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/256.jpg"
+  },
+  {
+    "id": "139095da-1760-42df-8e9b-55facaa90d74",
+    "slug": "emmanuel-effiong-ukpongudo",
+    "full_name": "Emmanuel Effiong Ukpong-udo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/325.jpg"
+  },
+  {
+    "id": "ba4f1d92-e000-4308-b633-abaa7816473f",
+    "slug": "iduma-enwo-igariwey",
+    "full_name": "Iduma Enwo Igariwey",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/378.jpg"
+  },
+  {
+    "id": "9c1364fc-c024-459d-9c4b-d11aae69f808",
+    "slug": "ibrahim-mohammed-bukar",
+    "full_name": "Ibrahim Mohammed Bukar",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/461.jpg"
+  },
+  {
+    "id": "7cad8c39-37da-40e6-b03b-b06fcc83e4f8",
+    "slug": "abdullahi-sani",
+    "full_name": "Abdullahi Sani",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/532.jpg"
+  },
+  {
+    "id": "0c0855b3-a9cf-4938-90c3-dff178dbca90",
+    "slug": "befford-onwuegbu-anayo",
+    "full_name": "Befford Onwuegbu Anayo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/537.jpg"
+  },
+  {
+    "id": "8a02b6f2-b488-459e-94fb-fb190881bb89",
+    "slug": "lanre-okunlola",
+    "full_name": "Lanre Okunlola",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/588.jpg"
+  },
+  {
+    "id": "ec9085d5-1726-40de-ae80-3cdc9dd1e37c",
+    "slug": "adetunji-abidemi-olusoji",
+    "full_name": "Adetunji Abidemi Olusoji",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/607.jpg"
+  },
+  {
+    "id": "f567e360-fcca-4ad4-905c-e55d958971ec",
+    "slug": "adeyemi-benjamin-olabinjo",
+    "full_name": "Adeyemi Benjamin Olabinjo",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/671.jpg"
+  },
+  {
+    "id": "207edb06-922e-4ced-9343-ee4839c8dfb6",
+    "slug": "tajudeen-kareem",
+    "full_name": "Tajudeen Kareem",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/677.jpg"
+  },
+  {
+    "id": "d3aeb9dc-49c4-4d15-b544-8ee766626494",
+    "slug": "sani-muhammad-ahmad",
+    "full_name": "Sani Muhammad Ahmad",
+    "photo_url": "https://nass.gov.ng/themes/newnass/images/mps/681.jpg"
+  }
+]

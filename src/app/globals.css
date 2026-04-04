@@ -4,11 +4,56 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Electorate Brand Fonts */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('https://fonts.gstatic.com/s/fraunces/v31/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAop1hTmf3ZGMZpg.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
+  /* Electorate Design System */
+  --color-primary: #5D49D6;        /* Purple — CTAs, badges, highlights */
+  --color-secondary: #00C49A;      /* Mint — accents, secondary actions */
+  --color-tertiary: #271E5D;       /* Deep purple — dark backgrounds */
+  --color-neutral: #787680;        /* Gray — muted text, borders */
+  --color-coral-red: #E84C30;      /* Danger / corruption */
+  --color-surface: #F8F6F1;        /* Cream — light section backgrounds */
+  --color-text: #1A1A18;           /* Body text */
+
+  /* Legacy aliases (used by Tailwind classes throughout) */
+  --color-federal-green: #271E5D;
+  --color-gold: #5D49D6;
+  --color-teal: #00C49A;
+  
+  /* Semantic mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Fonts */
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Sidebar */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -17,11 +62,15 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  
+  /* Charts */
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  
+  /* Core */
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -38,6 +87,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  
+  /* Radius */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,72 +99,88 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
+  /* Electorate Light Theme (Primary) */
+  --background: #F8F6F1;
+  --foreground: #1A1A18;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A18;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A18;
+  --primary: #271E5D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0EDE5;
+  --secondary-foreground: #271E5D;
+  --muted: #F0EDE5;
+  --muted-foreground: #5C5C5A;
+  --accent: #5D49D6;
+  --accent-foreground: #1A1A18;
+  --destructive: #E84C30;
+  --destructive-foreground: #FFFFFF;
+  --success: #00C49A;
+  --success-foreground: #FFFFFF;
+  --border: #E5E2DA;
+  --input: #E5E2DA;
+  --ring: #271E5D;
+  
+  /* Charts - Electorate palette */
+  --chart-1: #271E5D;
+  --chart-2: #00C49A;
+  --chart-3: #5D49D6;
+  --chart-4: #E84C30;
+  --chart-5: #5C5C5A;
+  
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Sidebar */
+  --sidebar: #271E5D;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #5D49D6;
+  --sidebar-primary-foreground: #1A1A18;
+  --sidebar-accent: #2D2463;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #2D2463;
+  --sidebar-ring: #5D49D6;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #121210;
+  --foreground: #F8F6F1;
+  --card: #1A1A18;
+  --card-foreground: #F8F6F1;
+  --popover: #1A1A18;
+  --popover-foreground: #F8F6F1;
+  --primary: #00C49A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2A2A28;
+  --secondary-foreground: #F8F6F1;
+  --muted: #2A2A28;
+  --muted-foreground: #9C9C98;
+  --accent: #5D49D6;
+  --accent-foreground: #1A1A18;
+  --destructive: #E84C30;
+  --destructive-foreground: #FFFFFF;
+  --success: #00C49A;
+  --success-foreground: #FFFFFF;
+  --border: #2A2A28;
+  --input: #2A2A28;
+  --ring: #00C49A;
+  
+  /* Charts */
+  --chart-1: #00C49A;
+  --chart-2: #5D49D6;
+  --chart-3: #E84C30;
+  --chart-4: #271E5D;
+  --chart-5: #9C9C98;
+  
+  /* Sidebar */
+  --sidebar: #1A1A18;
+  --sidebar-foreground: #F8F6F1;
+  --sidebar-primary: #5D49D6;
+  --sidebar-primary-foreground: #1A1A18;
+  --sidebar-accent: #2A2A28;
+  --sidebar-accent-foreground: #F8F6F1;
+  --sidebar-border: #2A2A28;
+  --sidebar-ring: #5D49D6;
 }
 
 @layer base {
@@ -121,9 +188,54 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
   }
   html {
-    @apply font-sans;
+    @apply scroll-smooth;
+    font-family: var(--font-sans);
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  
+  /* Score colors */
+  .score-red {
+    color: var(--color-coral-red);
+  }
+  .score-amber {
+    color: #F59E0B;
+  }
+  .score-green {
+    color: var(--color-teal);
+  }
+  
+  /* Accountability score ring backgrounds */
+  .score-bg-red {
+    background-color: rgba(232, 76, 48, 0.1);
+  }
+  .score-bg-amber {
+    background-color: rgba(245, 158, 11, 0.1);
+  }
+  .score-bg-green {
+    background-color: rgba(29, 158, 117, 0.1);
+  }
+}
+
+/* Hide scrollbar for horizontal scrolling tabs/containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

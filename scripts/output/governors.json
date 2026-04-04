@@ -1,0 +1,326 @@
+[
+  {
+    "full_name": "Alex Otti",
+    "state": "Abia",
+    "party": "LP",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "alex-otti",
+    "photo_url": null
+  },
+  {
+    "full_name": "Ahmadu Umaru Fintiri",
+    "state": "Adamawa",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "ahmadu-umaru-fintiri",
+    "photo_url": null
+  },
+  {
+    "full_name": "Umo Eno",
+    "state": "Akwa Ibom",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "umo-eno",
+    "photo_url": null
+  },
+  {
+    "full_name": "Charles Soludo",
+    "state": "Anambra",
+    "party": "APGA",
+    "start_date": "2022-03-17",
+    "term_end": "2026-03-17",
+    "slug": "charles-soludo",
+    "photo_url": null
+  },
+  {
+    "full_name": "Bala Muhammed",
+    "state": "Bauchi",
+    "party": "PDP",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "bala-muhammed",
+    "photo_url": null
+  },
+  {
+    "full_name": "Douye Diri",
+    "state": "Bayelsa",
+    "party": "APC",
+    "start_date": "2020-02-14",
+    "term_end": "2028-02-14",
+    "slug": "douye-diri",
+    "photo_url": null
+  },
+  {
+    "full_name": "Hyacinth Alia",
+    "state": "Benue",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "hyacinth-alia",
+    "photo_url": null
+  },
+  {
+    "full_name": "Babagana Zulum",
+    "state": "Borno",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "babagana-zulum",
+    "photo_url": null
+  },
+  {
+    "full_name": "Bassey Otu",
+    "state": "Cross River",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "bassey-otu",
+    "photo_url": null
+  },
+  {
+    "full_name": "Sheriff Oborevwori",
+    "state": "Delta",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "sheriff-oborevwori",
+    "photo_url": null
+  },
+  {
+    "full_name": "Francis Nwifuru",
+    "state": "Ebonyi",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "francis-nwifuru",
+    "photo_url": null
+  },
+  {
+    "full_name": "Monday Okpebholo",
+    "state": "Edo",
+    "party": "APC",
+    "start_date": "2024-11-12",
+    "term_end": "2028-11-12",
+    "slug": "monday-okpebholo",
+    "photo_url": null
+  },
+  {
+    "full_name": "Biodun Oyebanji",
+    "state": "Ekiti",
+    "party": "APC",
+    "start_date": "2022-10-16",
+    "term_end": "2026-10-16",
+    "slug": "biodun-oyebanji",
+    "photo_url": null
+  },
+  {
+    "full_name": "Peter Mbah",
+    "state": "Enugu",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "peter-mbah",
+    "photo_url": null
+  },
+  {
+    "full_name": "Muhammad Inuwa Yahaya",
+    "state": "Gombe",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "muhammad-inuwa-yahaya",
+    "photo_url": null
+  },
+  {
+    "full_name": "Hope Uzodinma",
+    "state": "Imo",
+    "party": "APC",
+    "start_date": "2020-01-14",
+    "term_end": "2028-01-14",
+    "slug": "hope-uzodinma",
+    "photo_url": null
+  },
+  {
+    "full_name": "Umar Namadi",
+    "state": "Jigawa",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "umar-namadi",
+    "photo_url": null
+  },
+  {
+    "full_name": "Uba Sani",
+    "state": "Kaduna",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "uba-sani",
+    "photo_url": null
+  },
+  {
+    "full_name": "Abba Kabir Yusuf",
+    "state": "Kano",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "abba-kabir-yusuf",
+    "photo_url": null
+  },
+  {
+    "full_name": "Dikko Umaru Radda",
+    "state": "Katsina",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "dikko-umaru-radda",
+    "photo_url": null
+  },
+  {
+    "full_name": "Nasir Idris",
+    "state": "Kebbi",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "nasir-idris",
+    "photo_url": null
+  },
+  {
+    "full_name": "Ahmed Usman Ododo",
+    "state": "Kogi",
+    "party": "APC",
+    "start_date": "2024-01-27",
+    "term_end": "2028-01-27",
+    "slug": "ahmed-usman-ododo",
+    "photo_url": null
+  },
+  {
+    "full_name": "AbdulRahman AbdulRazaq",
+    "state": "Kwara",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "abdulrahman-abdulrazaq",
+    "photo_url": null
+  },
+  {
+    "full_name": "Babajide Sanwo-Olu",
+    "state": "Lagos",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "babajide-sanwoolu",
+    "photo_url": null
+  },
+  {
+    "full_name": "Abdullahi Sule",
+    "state": "Nasarawa",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "abdullahi-sule",
+    "photo_url": null
+  },
+  {
+    "full_name": "Mohammed Umar Bago",
+    "state": "Niger",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "mohammed-umar-bago",
+    "photo_url": null
+  },
+  {
+    "full_name": "Dapo Abiodun",
+    "state": "Ogun",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "dapo-abiodun",
+    "photo_url": null
+  },
+  {
+    "full_name": "Lucky Aiyedatiwa",
+    "state": "Ondo",
+    "party": "APC",
+    "start_date": "2023-12-27",
+    "term_end": "2029-02-24",
+    "slug": "lucky-aiyedatiwa",
+    "photo_url": null
+  },
+  {
+    "full_name": "Ademola Adeleke",
+    "state": "Osun",
+    "party": "PDP",
+    "start_date": "2022-11-27",
+    "term_end": "2026-11-27",
+    "slug": "ademola-adeleke",
+    "photo_url": null
+  },
+  {
+    "full_name": "Seyi Makinde",
+    "state": "Oyo",
+    "party": "PDP",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "seyi-makinde",
+    "photo_url": null
+  },
+  {
+    "full_name": "Caleb Mutfwang",
+    "state": "Plateau",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "caleb-mutfwang",
+    "photo_url": null
+  },
+  {
+    "full_name": "Siminalayi Fubara",
+    "state": "Rivers",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "siminalayi-fubara",
+    "photo_url": null
+  },
+  {
+    "full_name": "Ahmad Aliyu",
+    "state": "Sokoto",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "ahmad-aliyu",
+    "photo_url": null
+  },
+  {
+    "full_name": "Agbu Kefas",
+    "state": "Taraba",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "agbu-kefas",
+    "photo_url": null
+  },
+  {
+    "full_name": "Mai Mala Buni",
+    "state": "Yobe",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "mai-mala-buni",
+    "photo_url": null
+  },
+  {
+    "full_name": "Dauda Lawal",
+    "state": "Zamfara",
+    "party": "APC",
+    "start_date": "2023-05-29",
+    "term_end": "2027-05-29",
+    "slug": "dauda-lawal",
+    "photo_url": null
+  }
+]

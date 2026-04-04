@@ -1,0 +1,23 @@
+{
+  "name": "Electorate",
+  "short_name": "Electorate",
+  "description": "Nigeria's definitive politician accountability platform.",
+  "icons": [
+    {
+      "src": "/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#271e5d",
+  "background_color": "#f8f6f1",
+  "display": "standalone",
+  "start_url": "/"
+}

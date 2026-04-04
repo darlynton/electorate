@@ -1,0 +1,147 @@
+[
+  { "state": "Abia", "district": "Abia Central", "full_name": "Austin Akobundu", "party": "PDP" },
+  { "state": "Abia", "district": "Abia North", "full_name": "Orji Uzor Kalu", "party": "APC" },
+  { "state": "Abia", "district": "Abia South", "full_name": "Enyinnaya Abaribe", "party": "APGA" },
+
+  { "state": "Adamawa", "district": "Adamawa Central", "full_name": "Abbas Aminu Iya", "party": "PDP" },
+  { "state": "Adamawa", "district": "Adamawa North", "full_name": "Amos Yohanna", "party": "PDP" },
+  { "state": "Adamawa", "district": "Adamawa South", "full_name": "Binos Dauda Yaroe", "party": "PDP" },
+
+  { "state": "Akwa Ibom", "district": "Akwa Ibom North-East", "full_name": "Bassey Aniekan Etim", "party": "PDP" },
+  { "state": "Akwa Ibom", "district": "Akwa Ibom North-West", "full_name": "Godswill Akpabio", "party": "APC" },
+  { "state": "Akwa Ibom", "district": "Akwa Ibom South", "full_name": "Akpan Ekong Sampson", "party": "PDP" },
+
+  { "state": "Anambra", "district": "Anambra Central", "full_name": "Victor Umeh", "party": "LP" },
+  { "state": "Anambra", "district": "Anambra North", "full_name": "Tony Nwoye", "party": "LP" },
+  { "state": "Anambra", "district": "Anambra South", "full_name": "Nwachukwu Emmanuel", "party": "APGA" },
+
+  { "state": "Bauchi", "district": "Bauchi Central", "full_name": "Ahmed Abdul Ningi", "party": "PDP" },
+  { "state": "Bauchi", "district": "Bauchi North", "full_name": "Samaila Dahuwa Kaila", "party": "PDP" },
+  { "state": "Bauchi", "district": "Bauchi South", "full_name": "Umar Shehu Buba", "party": "APC" },
+
+  { "state": "Bayelsa", "district": "Bayelsa Central", "full_name": "Benson Friday Konbowei", "party": "PDP" },
+  { "state": "Bayelsa", "district": "Bayelsa East", "full_name": "Agadaga Benson Sunday", "party": "PDP" },
+  { "state": "Bayelsa", "district": "Bayelsa West", "full_name": "Henry Seriake Dickson", "party": "PDP" },
+
+  { "state": "Benue", "district": "Benue North-East", "full_name": "Udende Memsa Emmanuel", "party": "APC" },
+  { "state": "Benue", "district": "Benue North-West", "full_name": "Titus Tartengar Zam", "party": "APC" },
+  { "state": "Benue", "district": "Benue South", "full_name": "Patrick Abba Moro", "party": "PDP" },
+
+  { "state": "Borno", "district": "Borno Central", "full_name": "Kaka Shehu Lawan", "party": "APC" },
+  { "state": "Borno", "district": "Borno North", "full_name": "Mohammed Tahir Monguno", "party": "APC" },
+  { "state": "Borno", "district": "Borno South", "full_name": "Mohammed Ali Ndume", "party": "APC" },
+
+  { "state": "Cross River", "district": "Cross River Central", "full_name": "Williams Eteng Jonah", "party": "PDP" },
+  { "state": "Cross River", "district": "Cross River North", "full_name": "Agom Jarigbe", "party": "PDP" },
+  { "state": "Cross River", "district": "Cross River South", "full_name": "Ekpeyong Asuquo", "party": "APC" },
+
+  { "state": "Delta", "district": "Delta Central", "full_name": "Dafinone Edeh Omueya", "party": "APC" },
+  { "state": "Delta", "district": "Delta North", "full_name": "Nwoko Chinedu Munir", "party": "PDP" },
+  { "state": "Delta", "district": "Delta South", "full_name": "Joel-Onowakpo Thomas", "party": "APC" },
+
+  { "state": "Ebonyi", "district": "Ebonyi Central", "full_name": "Eze Kenneth Emeka", "party": "APC" },
+  { "state": "Ebonyi", "district": "Ebonyi North", "full_name": "Nwebonyi Onyeka Peter", "party": "APC" },
+  { "state": "Ebonyi", "district": "Ebonyi South", "full_name": "Okorie Anthony Ani", "party": "APC" },
+
+  { "state": "Edo", "district": "Edo Central", "full_name": "Okphebolo Monday", "party": "APC" },
+  { "state": "Edo", "district": "Edo North", "full_name": "Adams Aliyu Oshiomhole", "party": "APC" },
+  { "state": "Edo", "district": "Edo South", "full_name": "Imasuen Neda Bernards", "party": "APC" },
+
+  { "state": "Ekiti", "district": "Ekiti Central", "full_name": "Michael Opeyemi Bamidele", "party": "APC" },
+  { "state": "Ekiti", "district": "Ekiti North", "full_name": "Fasuyi Cyril Oluwole", "party": "APC" },
+  { "state": "Ekiti", "district": "Ekiti South", "full_name": "Adaramodu Adeyemi Raphael", "party": "APC" },
+
+  { "state": "Enugu", "district": "Enugu East", "full_name": "Kelvin Chukwu", "party": "LP" },
+  { "state": "Enugu", "district": "Enugu North", "full_name": "Okechukwu Ezea", "party": "LP" },
+  { "state": "Enugu", "district": "Enugu West", "full_name": "Ngwu Osita", "party": "PDP" },
+
+  { "state": "FCT", "district": "FCT", "full_name": "Ireti Kingibe", "party": "LP" },
+
+  { "state": "Gombe", "district": "Gombe Central", "full_name": "Mohammed Danjuma Goje", "party": "APC" },
+  { "state": "Gombe", "district": "Gombe North", "full_name": "Ibrahim Hassan Dankwambo", "party": "PDP" },
+  { "state": "Gombe", "district": "Gombe South", "full_name": "Anthony Siyako Yaro", "party": "PDP" },
+
+  { "state": "Imo", "district": "Imo East", "full_name": "Ezenwa Francis Onyewuchi", "party": "LP" },
+  { "state": "Imo", "district": "Imo North", "full_name": "Patrick Ndubueze", "party": "APC" },
+  { "state": "Imo", "district": "Imo West", "full_name": "Osita Izunaso", "party": "APC" },
+
+  { "state": "Jigawa", "district": "Jigawa North-East", "full_name": "Ahmad Abdulhamid Malam Madori", "party": "APC" },
+  { "state": "Jigawa", "district": "Jigawa North-West", "full_name": "Babangida Hussaini", "party": "APC" },
+  { "state": "Jigawa", "district": "Jigawa South-West", "full_name": "Mustapha Khabeeb", "party": "PDP" },
+
+  { "state": "Kaduna", "district": "Kaduna Central", "full_name": "Lawal Adamu Usman", "party": "PDP" },
+  { "state": "Kaduna", "district": "Kaduna North", "full_name": "Ibrahim Khalid Mustapha", "party": "PDP" },
+  { "state": "Kaduna", "district": "Kaduna South", "full_name": "Sunday Marshall Katung", "party": "PDP" },
+
+  { "state": "Kano", "district": "Kano Central", "full_name": "Rufai Hanga", "party": "NNPP" },
+  { "state": "Kano", "district": "Kano North", "full_name": "Barau Jibrin", "party": "APC" },
+  { "state": "Kano", "district": "Kano South", "full_name": "Suleiman Abdurrahman Kawu Sumaila", "party": "APC" },
+
+  { "state": "Katsina", "district": "Katsina Central", "full_name": "Abdul'aziz Musa Yar'adua", "party": "APC" },
+  { "state": "Katsina", "district": "Katsina North", "full_name": "Sani Daura", "party": "APC" },
+  { "state": "Katsina", "district": "Katsina South", "full_name": "Mohammed Muntari Dandutse", "party": "APC" },
+
+  { "state": "Kebbi", "district": "Kebbi Central", "full_name": "Adamu Aliero", "party": "PDP" },
+  { "state": "Kebbi", "district": "Kebbi North", "full_name": "Yahaya Abubakar Abdullahi", "party": "PDP" },
+  { "state": "Kebbi", "district": "Kebbi South", "full_name": "TBD", "party": "TBD" },
+
+  { "state": "Kogi", "district": "Kogi Central", "full_name": "Natasha Akpoti", "party": "PDP" },
+  { "state": "Kogi", "district": "Kogi East", "full_name": "Jibrin Isah", "party": "APC" },
+  { "state": "Kogi", "district": "Kogi West", "full_name": "Sunday Karimi", "party": "APC" },
+
+  { "state": "Kwara", "district": "Kwara Central", "full_name": "Saliu Mustapha", "party": "APC" },
+  { "state": "Kwara", "district": "Kwara North", "full_name": "Suleiman Sadiq Umar", "party": "APC" },
+  { "state": "Kwara", "district": "Kwara South", "full_name": "Lola Ashiru", "party": "APC" },
+
+  { "state": "Lagos", "district": "Lagos Central", "full_name": "Wasiu Eshinlokun-Sanni", "party": "APC" },
+  { "state": "Lagos", "district": "Lagos East", "full_name": "Tokunbo Abiru", "party": "APC" },
+  { "state": "Lagos", "district": "Lagos West", "full_name": "Oluranti Adebule", "party": "APC" },
+
+  { "state": "Nasarawa", "district": "Nasarawa North", "full_name": "Godiya Akwashiki", "party": "SDP" },
+  { "state": "Nasarawa", "district": "Nasarawa South", "full_name": "Mohammed Ogoshi Onawo", "party": "PDP" },
+  { "state": "Nasarawa", "district": "Nasarawa West", "full_name": "Ahmed Aliyu Wadada", "party": "SDP" },
+
+  { "state": "Niger", "district": "Niger East", "full_name": "Sani Musa", "party": "APC" },
+  { "state": "Niger", "district": "Niger North", "full_name": "Abubakar Sani Bello", "party": "APC" },
+  { "state": "Niger", "district": "Niger South", "full_name": "Peter Ndalikali Jiya", "party": "PDP" },
+
+  { "state": "Ogun", "district": "Ogun Central", "full_name": "Shuaibu Salisu", "party": "APC" },
+  { "state": "Ogun", "district": "Ogun East", "full_name": "Gbenga Daniel", "party": "APC" },
+  { "state": "Ogun", "district": "Ogun West", "full_name": "Solomon Olamilekan Adeola", "party": "APC" },
+
+  { "state": "Ondo", "district": "Ondo Central", "full_name": "Adeniyi Adegbonmire", "party": "APC" },
+  { "state": "Ondo", "district": "Ondo North", "full_name": "Jide Ipinsagba", "party": "APC" },
+  { "state": "Ondo", "district": "Ondo South", "full_name": "Jimoh Ibrahim", "party": "APC" },
+
+  { "state": "Osun", "district": "Osun Central", "full_name": "Olubiyi Fadeyi", "party": "PDP" },
+  { "state": "Osun", "district": "Osun East", "full_name": "Fadahunsi Francis Adenigba", "party": "PDP" },
+  { "state": "Osun", "district": "Osun West", "full_name": "Lere Oyewumi", "party": "PDP" },
+
+  { "state": "Oyo", "district": "Oyo Central", "full_name": "Yunus Akintunde", "party": "APC" },
+  { "state": "Oyo", "district": "Oyo North", "full_name": "Abdulfatai Buhari", "party": "APC" },
+  { "state": "Oyo", "district": "Oyo South", "full_name": "Sharafadeen Alli", "party": "APC" },
+
+  { "state": "Plateau", "district": "Plateau Central", "full_name": "Diket Plang", "party": "APC" },
+  { "state": "Plateau", "district": "Plateau North", "full_name": "Pam Dachungyang", "party": "ADP" },
+  { "state": "Plateau", "district": "Plateau South", "full_name": "Simon Lalong", "party": "APC" },
+
+  { "state": "Rivers", "district": "Rivers East", "full_name": "Allwell Onyeso", "party": "PDP" },
+  { "state": "Rivers", "district": "Rivers South-East", "full_name": "Barry Mpigi", "party": "PDP" },
+  { "state": "Rivers", "district": "Rivers West", "full_name": "Ipalibo Banigo", "party": "PDP" },
+
+  { "state": "Sokoto", "district": "Sokoto East", "full_name": "Ibrahim Gobir", "party": "APC" },
+  { "state": "Sokoto", "district": "Sokoto North", "full_name": "Aliyu Wamakko", "party": "APC" },
+  { "state": "Sokoto", "district": "Sokoto South", "full_name": "Aminu Tambuwal", "party": "PDP" },
+
+  { "state": "Taraba", "district": "Taraba Central", "full_name": "Haruna Manu", "party": "PDP" },
+  { "state": "Taraba", "district": "Taraba North", "full_name": "Shuaibu Isa Lau", "party": "PDP" },
+  { "state": "Taraba", "district": "Taraba South", "full_name": "David Jimkuta", "party": "APC" },
+
+  { "state": "Yobe", "district": "Yobe East", "full_name": "Ibrahim Gaidam", "party": "APC" },
+  { "state": "Yobe", "district": "Yobe North", "full_name": "Ahmed Lawan", "party": "APC" },
+  { "state": "Yobe", "district": "Yobe South", "full_name": "Ibrahim Mohammed Bomai", "party": "APC" },
+
+  { "state": "Zamfara", "district": "Zamfara Central", "full_name": "Ikra Aliyu Bilbis", "party": "PDP" },
+  { "state": "Zamfara", "district": "Zamfara North", "full_name": "Sahabi Alhaji Yau", "party": "APC" },
+  { "state": "Zamfara", "district": "Zamfara West", "full_name": "Abdul'aziz Abubakar Yari", "party": "APC" }
+]

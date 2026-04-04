@@ -1,0 +1,564 @@
+/**
+ * NaijaRep — NASS Member Scraper
+ * ================================
+ * Scrapes the National Assembly website (nass.gov.ng) to extract
+ * senator and House of Representatives member data and optionally
+ * imports it directly into Supabase.
+ *
+ * Usage:
+ *   npx tsx scripts/scrape-nass.ts                              # scrape all, save to JSON
+ *   npx tsx scripts/scrape-nass.ts --chamber=senate             # senators only
+ *   npx tsx scripts/scrape-nass.ts --chamber=house              # house reps only
+ *   npx tsx scripts/scrape-nass.ts --limit=10                   # test with 10 members
+ *   npx tsx scripts/scrape-nass.ts --profiles                   # also scrape individual profiles (slower)
+ *   npx tsx scripts/scrape-nass.ts --import                     # scrape + import to Supabase
+ *   npx tsx scripts/scrape-nass.ts --from-json --import         # import existing JSON only (no scraping)
+ *
+ * Output:
+ *   scripts/output/senators.json
+ *   scripts/output/house_reps.json
+ *   scripts/output/all_members.json
+ *   scripts/output/scrape-log.json
+ */
+
+import * as cheerio from 'cheerio';
+import { createClient } from '@supabase/supabase-js';
+import { config } from 'dotenv';
+import * as fs from 'fs';
+import * as path from 'path';
+
+config({ path: '.env.local' });
+
+// ─── CLI Arguments ────────────────────────────────────────────────────────────
+const args = process.argv.slice(2);
+const flag = (name: string) => args.includes(`--${name}`);
+const opt = (name: string) => args.find(a => a.startsWith(`--${name}=`))?.split('=')[1];
+
+const IMPORT_TO_DB  = flag('import');
+const FROM_JSON     = flag('from-json');
+const FETCH_PROFILES = flag('profiles');
+const CHAMBER_ARG   = (opt('chamber') ?? 'all') as 'senate' | 'house' | 'all';
+const LIMIT         = parseInt(opt('limit') ?? 'Infinity');
+
+// ─── Constants ────────────────────────────────────────────────────────────────
+const NASS_BASE  = 'https://nass.gov.ng';
+const PHOTO_BASE = `${NASS_BASE}/themes/newnass/images/mps`;
+const DELAY_MS   = 1500; // ~40 req/min — polite crawling
+const OUTPUT_DIR = path.join(process.cwd(), 'scripts', 'output');
+
+const FETCH_HEADERS = {
+  'User-Agent': 'NaijaRep/1.0 (civic-tech accountability research; naijarep.ng)',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9',
+  'Accept-Language': 'en-US,en;q=0.9',
+};
+
+// 10th Assembly start date
+const ASSEMBLY_START = '2023-06-13';
+const ASSEMBLY_NUMBER = 10;
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+interface ListEntry {
+  nass_id: number;
+  full_name: string;
+  state: string;
+  constituency: string;
+  party: string;
+}
+
+interface ProfileData {
+  title: string;
+  date_of_birth?: string;
+  biography?: string;
+  twitter?: string;
+  email?: string;
+}
+
+export interface NASSMember extends ListEntry {
+  slug: string;
+  chamber: 'Senate' | 'House';
+  title: string;
+  photo_url: string;
+  nass_url: string;
+  date_of_birth?: string;
+  biography?: string;
+  twitter?: string;
+  email?: string;
+  scraped_at: string;
+}
+
+interface ScrapeLog {
+  started_at: string;
+  finished_at?: string;
+  total: number;
+  senate_count: number;
+  house_count: number;
+  errors: string[];
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+
+function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/^(sen\.|hon\.)\s+/i, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
+
+function deduplicateSlug(slug: string, seen: Set<string>): string {
+  let candidate = slug;
+  let counter = 2;
+  while (seen.has(candidate)) {
+    candidate = `${slug}-${counter++}`;
+  }
+  seen.add(candidate);
+  return candidate;
+}
+
+function normalizeName(raw: string): string {
+  return raw
+    .replace(/^(SEN\.|HON\.)\s+/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ');
+}
+
+function normalizeState(raw: string): string {
+  const stateMap: Record<string, string> = {
+    'fct': 'FCT',
+    'federal capital territory': 'FCT',
+    'cross river': 'Cross River',
+    'akwa ibom': 'Akwa Ibom',
+    'rivers': 'Rivers',
+    'niger': 'Niger',
+    'ogun': 'Ogun',
+    'ondo': 'Ondo',
+    'osun': 'Osun',
+    'oyo': 'Oyo',
+    'kogi': 'Kogi',
+    'kano': 'Kano',
+    'katsina': 'Katsina',
+    'kebbi': 'Kebbi',
+    'kwara': 'Kwara',
+    'kaduna': 'Kaduna',
+  };
+  const lower = raw.trim().toLowerCase();
+  return stateMap[lower] ?? raw.trim().replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function normalizeParty(raw: string): string {
+  return raw.trim().toUpperCase();
+}
+
+async function fetchHtml(url: string, retries = 2): Promise<string | null> {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, {
+        headers: FETCH_HEADERS,
+        signal: AbortSignal.timeout(15_000),
+      });
+      if (res.status === 429) {
+        console.warn(`  ⚠ Rate limited (429) — waiting 10s...`);
+        await sleep(10_000);
+        continue;
+      }
+      if (!res.ok) {
+        console.warn(`  ⚠ HTTP ${res.status} for ${url}`);
+        return null;
+      }
+      return await res.text();
+    } catch (e) {
+      if (attempt < retries) {
+        await sleep(3_000);
+      } else {
+        console.warn(`  ⚠ Fetch failed after ${retries + 1} attempts: ${url}`);
+        return null;
+      }
+    }
+  }
+  return null;
+}
+
+// ─── List Page Scraper ────────────────────────────────────────────────────────
+/**
+ * Scrapes the senators or house members list page.
+ * The NASS site uses DataTables with server-rendered HTML —
+ * all rows are in the initial response, paginated client-side.
+ * Table columns: NAME (link) | STATE | DISTRICT | PARTY
+ */
+async function scrapeList(
+  chamber: 'Senate' | 'House'
+): Promise<ListEntry[]> {
+  const url = chamber === 'Senate'
+    ? `${NASS_BASE}/mps/senators`
+    : `${NASS_BASE}/mps/members`;
+
+  console.log(`\n📋 Fetching ${chamber} list…`);
+  const html = await fetchHtml(url);
+  if (!html) {
+    console.error(`  ✗ Could not fetch ${url}`);
+    return [];
+  }
+
+  const $ = cheerio.load(html);
+  const members: ListEntry[] = [];
+
+  // DataTable tbody rows
+  $('table tbody tr').each((_, row) => {
+    const cells = $(row).find('td');
+    if (cells.length < 4) return;
+
+    const nameCell  = $(cells[0]);
+    const link      = nameCell.find('a').attr('href') ?? '';
+    const rawName   = nameCell.find('a').text().trim();
+    const rawState  = $(cells[1]).text().trim();
+    const rawDist   = $(cells[2]).text().trim();
+    const rawParty  = $(cells[3]).text().trim();
+
+    const idMatch = link.match(/\/mps\/single\/(\d+)/);
+    if (!idMatch || !rawName) return;
+
+    members.push({
+      nass_id:      parseInt(idMatch[1]),
+      full_name:    normalizeName(rawName),
+      state:        normalizeState(rawState),
+      constituency: rawDist.trim(),
+      party:        normalizeParty(rawParty),
+    });
+  });
+
+  // Fallback: try anchor-based parsing if DataTable wasn't found
+  if (members.length === 0) {
+    console.warn(`  ⚠ DataTable parser found 0 rows — trying anchor fallback`);
+    $('a[href*="/mps/single/"]').each((_, el) => {
+      const href     = $(el).attr('href') ?? '';
+      const rawName  = $(el).text().trim();
+      const idMatch  = href.match(/\/mps\/single\/(\d+)/);
+      if (!idMatch || !rawName || rawName.length < 3) return;
+
+      // Try to read sibling cells
+      const row    = $(el).closest('tr');
+      const cells  = row.find('td');
+      const state  = cells.length > 1 ? normalizeState($(cells[1]).text().trim()) : '';
+      const dist   = cells.length > 2 ? $(cells[2]).text().trim() : '';
+      const party  = cells.length > 3 ? normalizeParty($(cells[3]).text().trim()) : '';
+
+      members.push({
+        nass_id:      parseInt(idMatch[1]),
+        full_name:    normalizeName(rawName),
+        state,
+        constituency: dist,
+        party,
+      });
+    });
+  }
+
+  console.log(`  ✓ Found ${members.length} ${chamber} members`);
+  return members;
+}
+
+// ─── Individual Profile Scraper ───────────────────────────────────────────────
+/**
+ * Scrapes an individual legislator's profile page.
+ * Extracts: office title, date of birth, contact info.
+ */
+async function scrapeProfile(nassId: number, chamber: 'Senate' | 'House'): Promise<ProfileData> {
+  const url = `${NASS_BASE}/mps/single/${nassId}`;
+  const html = await fetchHtml(url);
+
+  const defaultTitle = chamber === 'Senate' ? 'Senator' : 'House Representative';
+  if (!html) return { title: defaultTitle };
+
+  const $ = cheerio.load(html);
+  const bodyText = $('body').text();
+
+  // ── Title / Office ──
+  let title = defaultTitle;
+  const officeMatch = bodyText.match(/OFFICE\s*\n?\s*([^\n]+)/i);
+  if (officeMatch) {
+    const raw = officeMatch[1].trim();
+    if (raw && raw !== '-' && raw.length < 80) title = raw;
+  }
+
+  // ── Date of Birth ──
+  let dob: string | undefined;
+  const dobMatch = bodyText.match(/DATE OF BIRTH\s*\n?\s*(\d{4}-\d{2}-\d{2})/i);
+  if (dobMatch) dob = dobMatch[1];
+
+  // ── Email ──
+  let email: string | undefined;
+  const emailEl = $('a[href^="mailto:"]').first();
+  if (emailEl.length) {
+    const raw = emailEl.attr('href')?.replace('mailto:', '').trim();
+    if (raw && raw !== '-') email = raw;
+  }
+
+  // ── Twitter ──
+  let twitter: string | undefined;
+  const twitterEl = $('a[href*="twitter.com"], a[href*="x.com"]').first();
+  if (twitterEl.length) {
+    const href = twitterEl.attr('href') ?? '';
+    const handle = href.match(/(?:twitter|x)\.com\/([^/?]+)/)?.[1];
+    if (handle && handle !== 'intent') twitter = `@${handle}`;
+  }
+
+  return { title, date_of_birth: dob, email, twitter };
+}
+
+// ─── Main Scrape Orchestrator ─────────────────────────────────────────────────
+async function scrapeMembers(chamber: 'Senate' | 'House'): Promise<NASSMember[]> {
+  const listData = await scrapeList(chamber);
+  const toProcess = isFinite(LIMIT) ? listData.slice(0, LIMIT) : listData;
+  const total = toProcess.length;
+  const slugsSeen = new Set<string>();
+  const members: NASSMember[] = [];
+
+  if (total === 0) return [];
+
+  if (FETCH_PROFILES) {
+    console.log(`  → Fetching ${total} individual profiles (${DELAY_MS}ms delay each)…`);
+    console.log(`  → Estimated time: ~${Math.ceil((total * DELAY_MS) / 60_000)} minutes`);
+  } else {
+    console.log(`  → Building ${total} member records (no individual profile fetch)`);
+    console.log(`  → Run with --profiles to also scrape DOB, email, and exact office title`);
+  }
+
+  for (let i = 0; i < toProcess.length; i++) {
+    const m = toProcess[i];
+
+    let profile: ProfileData = {
+      title: chamber === 'Senate' ? 'Senator' : 'House Representative',
+    };
+
+    if (FETCH_PROFILES) {
+      process.stdout.write(`\r  → [${i + 1}/${total}] ${m.full_name.padEnd(45)}`);
+      await sleep(DELAY_MS);
+      profile = await scrapeProfile(m.nass_id, chamber);
+    }
+
+    const baseSlug  = toSlug(m.full_name);
+    const slug      = deduplicateSlug(baseSlug, slugsSeen);
+
+    members.push({
+      ...m,
+      slug,
+      chamber,
+      title:         profile.title,
+      photo_url:     `${PHOTO_BASE}/${m.nass_id}.jpg`,
+      nass_url:      `${NASS_BASE}/mps/single/${m.nass_id}`,
+      date_of_birth: profile.date_of_birth,
+      biography:     profile.biography,
+      twitter:       profile.twitter,
+      email:         profile.email,
+      scraped_at:    new Date().toISOString(),
+    });
+  }
+
+  if (FETCH_PROFILES) process.stdout.write('\n');
+  console.log(`  ✓ ${chamber} complete: ${members.length} members`);
+  return members;
+}
+
+// ─── Supabase Importer ────────────────────────────────────────────────────────
+async function importToSupabase(members: NASSMember[]): Promise<void> {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKey  = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || supabaseUrl.includes('your-project')) {
+    console.error('\n✗ Supabase not configured — add real credentials to .env.local first');
+    console.error('  NEXT_PUBLIC_SUPABASE_URL=https://<your-ref>.supabase.co');
+    console.error('  SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>');
+    return;
+  }
+  if (!serviceKey || serviceKey.includes('your-service')) {
+    console.error('\n✗ SUPABASE_SERVICE_ROLE_KEY not set');
+    return;
+  }
+
+  const db = createClient(supabaseUrl, serviceKey, {
+    auth: { persistSession: false },
+  });
+
+  console.log(`\n📥 Importing ${members.length} members to Supabase…`);
+
+  let imported = 0;
+  let updated  = 0;
+  let skipped  = 0;
+  const errors: string[] = [];
+
+  for (const m of members) {
+    // ── 1. Upsert politician ──
+    const { data: politician, error: polErr } = await db
+      .from('politicians')
+      .upsert(
+        {
+          full_name:      m.full_name,
+          slug:           m.slug,
+          photo_url:      m.photo_url,
+          date_of_birth:  m.date_of_birth ?? null,
+          state_of_origin: m.state,
+          contact_email:  m.email ?? null,
+          twitter_handle: m.twitter ?? null,
+          biography:      m.biography ?? null,
+          updated_at:     new Date().toISOString(),
+        },
+        { onConflict: 'slug' }
+      )
+      .select('id')
+      .single();
+
+    if (polErr || !politician) {
+      const msg = `Upsert failed for ${m.full_name}: ${polErr?.message}`;
+      errors.push(msg);
+      console.warn(`\n  ⚠ ${msg}`);
+      skipped++;
+      continue;
+    }
+
+    const politicianId = politician.id;
+
+    // ── 2. Check for existing current position ──
+    const { data: existing } = await db
+      .from('positions')
+      .select('id')
+      .eq('politician_id', politicianId)
+      .eq('assembly_number', ASSEMBLY_NUMBER)
+      .single();
+
+    if (existing) {
+      // Update the existing position
+      await db
+        .from('positions')
+        .update({
+          title:        m.title,
+          chamber:      m.chamber,
+          office_level: 'federal',
+          constituency: m.constituency,
+          state:        m.state,
+          party:        m.party,
+          is_current:   true,
+        })
+        .eq('id', existing.id);
+      updated++;
+    } else {
+      // Insert new position
+      await db.from('positions').insert({
+        politician_id:  politicianId,
+        title:          m.title,
+        chamber:        m.chamber,
+        office_level:   'federal',
+        constituency:   m.constituency,
+        state:          m.state,
+        party:          m.party,
+        assembly_number: ASSEMBLY_NUMBER,
+        start_date:     ASSEMBLY_START,
+        is_current:     true,
+      });
+      imported++;
+    }
+
+    process.stdout.write(`\r  → Processed ${imported + updated + skipped}/${members.length}  (new: ${imported}, updated: ${updated}, skipped: ${skipped})`);
+  }
+
+  console.log(`\n\n  ✓ Import complete`);
+  console.log(`     New:     ${imported}`);
+  console.log(`     Updated: ${updated}`);
+  console.log(`     Skipped: ${skipped}`);
+  if (errors.length > 0) {
+    console.log(`     Errors:  ${errors.length} (see scrape-log.json)`);
+  }
+
+  return;
+}
+
+// ─── Entry Point ──────────────────────────────────────────────────────────────
+async function main() {
+  console.log('\n🇳🇬  NaijaRep — NASS Member Scraper');
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log(`Chamber:       ${CHAMBER_ARG}`);
+  console.log(`Limit:         ${isFinite(LIMIT) ? LIMIT : 'all'}`);
+  console.log(`Fetch profiles: ${FETCH_PROFILES}`);
+  console.log(`Import to DB:  ${IMPORT_TO_DB}`);
+  console.log(`From JSON:     ${FROM_JSON}`);
+  console.log('');
+
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+  const log: ScrapeLog = {
+    started_at: new Date().toISOString(),
+    total: 0,
+    senate_count: 0,
+    house_count: 0,
+    errors: [],
+  };
+
+  let allMembers: NASSMember[] = [];
+
+  if (FROM_JSON) {
+    // ── Load from existing JSON ──
+    const combinedPath = path.join(OUTPUT_DIR, 'all_members.json');
+    if (!fs.existsSync(combinedPath)) {
+      console.error(`✗ File not found: ${combinedPath}`);
+      console.error('  Run without --from-json to scrape first');
+      process.exit(1);
+    }
+    allMembers = JSON.parse(fs.readFileSync(combinedPath, 'utf-8')) as NASSMember[];
+    console.log(`📂 Loaded ${allMembers.length} members from ${combinedPath}`);
+  } else {
+    // ── Scrape live ──
+    if (CHAMBER_ARG === 'all' || CHAMBER_ARG === 'senate') {
+      const senators = await scrapeMembers('Senate');
+      log.senate_count = senators.length;
+      fs.writeFileSync(
+        path.join(OUTPUT_DIR, 'senators.json'),
+        JSON.stringify(senators, null, 2)
+      );
+      console.log(`  💾 Saved senators.json (${senators.length} entries)`);
+      allMembers = allMembers.concat(senators);
+    }
+
+    if (CHAMBER_ARG === 'all' || CHAMBER_ARG === 'house') {
+      const houseReps = await scrapeMembers('House');
+      log.house_count = houseReps.length;
+      fs.writeFileSync(
+        path.join(OUTPUT_DIR, 'house_reps.json'),
+        JSON.stringify(houseReps, null, 2)
+      );
+      console.log(`  💾 Saved house_reps.json (${houseReps.length} entries)`);
+      allMembers = allMembers.concat(houseReps);
+    }
+
+    log.total = allMembers.length;
+    fs.writeFileSync(
+      path.join(OUTPUT_DIR, 'all_members.json'),
+      JSON.stringify(allMembers, null, 2)
+    );
+    console.log(`\n💾 Saved all_members.json (${allMembers.length} total)`);
+  }
+
+  // ── Supabase import ──
+  if (IMPORT_TO_DB && allMembers.length > 0) {
+    await importToSupabase(allMembers);
+  } else if (!IMPORT_TO_DB) {
+    console.log('\n💡 Next steps:');
+    console.log('   Review scripts/output/all_members.json');
+    console.log('   Then run: npx tsx scripts/scrape-nass.ts --from-json --import');
+  }
+
+  log.finished_at = new Date().toISOString();
+  fs.writeFileSync(
+    path.join(OUTPUT_DIR, 'scrape-log.json'),
+    JSON.stringify(log, null, 2)
+  );
+
+  console.log('\n✅ Done!\n');
+}
+
+main().catch(e => {
+  console.error('\n✗ Fatal error:', e);
+  process.exit(1);
+});

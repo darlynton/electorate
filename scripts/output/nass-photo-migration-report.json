@@ -1,0 +1,118 @@
+{
+  "total": 296,
+  "migrated": 274,
+  "skipped": 22,
+  "failures": [
+    {
+      "id": "983f2e3d-54ae-40cd-8909-8ccf41a33cc0",
+      "name": "Mohammed Sani Musa",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "a443d7ca-6b46-42ff-94a9-b7347464dde6",
+      "name": "Mohammad Adamu Mainasara Aliero",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "ac2d0f4f-cf39-4f27-ab7f-a9581cd23c99",
+      "name": "Ibrahim Mohammed Bomai",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "3fab037c-9ab0-48f0-8411-4e4e95c058a1",
+      "name": "Yahaya Abubakar Abdullahi",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "b353cfaa-1aa1-4cec-badf-9f79ce576c02",
+      "name": "Sadiq Suleiman Umar",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "7271302a-1944-4f35-9611-261c2bc14d31",
+      "name": "Shuaibu Isa Lau",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "04e53c2c-c70a-4bcc-85b3-fb0a80a6d47f",
+      "name": "Yau Sahabi Alhaji",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "5cb7014f-16c3-4ebc-b00f-736572087bdd",
+      "name": "Sunday Katung",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "9d5d411d-9152-4b76-9976-64566623dc1b",
+      "name": "Abubakar Yabo Umaru",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "19b857d4-b5bf-4033-af08-7034c47945da",
+      "name": "Adeyemi Taofeek Alli",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "fe539710-c633-4716-ad96-a0affade96a4",
+      "name": "Bamidele Salam",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "468cfaa5-a4db-438a-8bc5-c88ad4d5f65b",
+      "name": "Abdullahi Idris Garba",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "2c95fb3f-776a-4d0b-9d4a-59b8b4ebe842",
+      "name": "Yusuf Miga",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "302e2c46-2d9c-4677-a3ce-e7633958b1c9",
+      "name": "Usman Ibrahim Auyo",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "095a0c74-0310-4732-a08f-a98c5d240652",
+      "name": "Lawal Muhammadu Idirisu",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "1359cb34-159d-4289-90f5-0933b09afdb6",
+      "name": "Bello Shinkafi Hassan",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "433aa420-04c2-46b9-a79f-62760c8176b3",
+      "name": "Kabiru Amadu",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "8703cdad-daba-4c7e-82aa-e445f05febd7",
+      "name": "Bashiru Ayinla Dawodu",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "56d2571a-e369-489b-ab67-26a5755811c3",
+      "name": "Sulaiman Gumi Abubakar",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "d300d343-53aa-4d34-92d7-b2a5ca3f4ad7",
+      "name": "Boma Goodhead",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "0e1fac41-30cc-4cf3-b181-76e033bf3c0d",
+      "name": "Aliyu Iliyasu",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "9c1364fc-c024-459d-9c4b-d11aae69f808",
+      "name": "Ibrahim Mohammed Bukar",
+      "error": "HTTP 404"
+    }
+  ],
+  "completed_at": "2026-03-16T09:56:40.241Z"
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Simplified Nigeria outline -->
+  <path
+    d="M 180 40 L 220 35 L 270 50 L 310 70 L 340 100 L 355 140 L 350 180 L 330 220 L 300 250 L 280 290 L 260 330 L 240 360 L 220 370 L 200 365 L 180 370 L 160 360 L 140 330 L 120 290 L 100 250 L 70 220 L 50 180 L 45 140 L 60 100 L 90 70 L 130 50 Z"
+    fill="currentColor"
+    opacity="0.15"
+    stroke="currentColor"
+    stroke-width="2"
+    opacity="0.3"
+  />
+  <!-- Rivers delta region -->
+  <path
+    d="M 160 360 L 180 370 L 200 365 L 220 370 L 240 360 L 235 380 L 220 390 L 200 395 L 180 390 L 165 380 Z"
+    fill="currentColor"
+    opacity="0.1"
+  />
+  <!-- State boundaries simplified -->
+  <line x1="200" y1="40" x2="200" y2="370" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  <line x1="80" y1="200" x2="320" y2="200" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  <line x1="110" y1="120" x2="290" y2="280" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="290" y1="120" x2="110" y2="280" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+</svg>

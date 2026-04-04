@@ -180,7 +180,7 @@ export async function signInWithPassword(email: string, password: string) {
 
 export async function resetPassword(email: string) {
   return supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${window.location.origin}/`,
+    redirectTo: `${window.location.origin}/reset-password`,
   });
 }
 

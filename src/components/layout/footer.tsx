@@ -116,7 +116,8 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-white/70 hover:text-white transition-colors"
                   >
-                    {link.name}
+                    {link.name}                    git remote add origin <your-repo-url>
+                    git push -u origin main
                   </Link>
                 </li>
               ))}

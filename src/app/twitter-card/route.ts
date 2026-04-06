@@ -1,16 +1,8 @@
 import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 
-const BOT_UA = /Twitterbot|twitter\.com/i;
-
-export async function GET(request: Request) {
-  const ua = request.headers.get('user-agent') || '';
-
-  // Let humans land on the real homepage when they click the shared link.
-  if (!BOT_UA.test(ua)) {
-    return NextResponse.redirect('https://www.electorate.ng/', 307);
-  }
+export async function GET() {
 
   const html = `<!doctype html>
 <html lang="en">

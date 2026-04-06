@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title,
       description,
-      url: `https://electorate.ng/politicians/${slug}`,
+      url: `https://www.electorate.ng/politicians/${slug}`,
       images: [
         {
           url: ogImage,

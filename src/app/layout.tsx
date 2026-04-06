@@ -45,11 +45,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Electorate Team" }],
   creator: "Electorate",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://electorate.ng"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.electorate.ng"),
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://electorate.ng",
+    url: "https://www.electorate.ng",
     siteName: "Electorate",
     title: "Electorate — Know Who Represents You",
     description:

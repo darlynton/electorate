@@ -13,7 +13,7 @@ const DEFAULT_OG = {
   title: 'Electorate — Know Who Represents You',
   description:
     "Nigeria's definitive politician accountability and transparency platform.",
-  image: 'https://www.electorate.ng/meta-image.jpg',
+  image: 'https://www.electorate.ng/meta-image.png',
   url: 'https://www.electorate.ng',
 };
 
@@ -31,15 +31,20 @@ function buildMinimalHtml(og: {
 <meta property="og:title" content="${og.title}" />
 <meta property="og:description" content="${og.description}" />
 <meta property="og:image" content="${og.image}" />
+<meta property="og:image:secure_url" content="${og.image}" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="${og.url}" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Electorate" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@electorating" />
+<meta name="twitter:creator" content="@electorating" />
 <meta name="twitter:title" content="${og.title}" />
 <meta name="twitter:description" content="${og.description}" />
 <meta name="twitter:image" content="${og.image}" />
+<meta name="twitter:image:alt" content="Electorate — Know Who Represents You" />
 </head>
 <body></body>
 </html>`;

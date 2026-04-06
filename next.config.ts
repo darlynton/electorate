@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // ── Redirect non-www → www (301 permanent, so Twitter follows it) ───────
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'electorate.ng' }],
+        destination: 'https://www.electorate.ng/:path*',
+        permanent: true, // 301 instead of Vercel's default 307
+      },
+    ];
+  },
+
   // ── Security & performance headers ────────────────────────────────────────
   async headers() {
     return [

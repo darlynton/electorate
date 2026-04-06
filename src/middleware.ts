@@ -60,14 +60,14 @@ function addSecurityHeaders(response: NextResponse) {
   return response;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const { pathname } = request.nextUrl;
 
   // For non-bots: add security headers to HTML pages only, skip images/assets
   if (!BOT_UA.test(ua)) {
     const response = NextResponse.next();
-    if (!IS_ASSET.test(pathname) && !pathname.startsWith('/api/v1/og-image')) {
+    if (!IS_ASSET.test(pathname) && !pathname.startsWith('/api/v1/og-image') && !pathname.includes('opengraph-image')) {
       addSecurityHeaders(response);
     }
     return response;
@@ -97,11 +97,16 @@ export function middleware(request: NextRequest) {
     const slug = politicianMatch[1];
     const origin = request.nextUrl.origin;
 
-    // Fetch real politician data via our own API
+    // Use the existing opengraph-image route which generates a beautiful
+    // 1200x630 PNG card with politician photo, name, party, scores, etc.
+    // This is a self-hosted image from our domain with clean headers.
+    const ogImageUrl = `https://www.electorate.ng/politicians/${slug}/opengraph-image`;
+
+    // Fetch real politician data via our own API for title/description
     let og = {
       title: `${slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} | Electorate`,
       description: 'Track their voting record, promises, and accountability score on Electorate.',
-      image: DEFAULT_OG.image,
+      image: ogImageUrl,
       url: `https://www.electorate.ng/politicians/${slug}`,
     };
 
@@ -117,10 +122,6 @@ export function middleware(request: NextRequest) {
         }
         if (p?.biography) {
           og.description = p.biography.slice(0, 155) + '…';
-        }
-        if (p?.photo_url) {
-          // Proxy Supabase photos through our API to strip x-robots-tag
-          og.image = `${origin}/api/v1/og-photo?url=${encodeURIComponent(p.photo_url)}`;
         }
       }
     } catch {

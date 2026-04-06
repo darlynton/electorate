@@ -47,6 +47,24 @@ const nextConfig: NextConfig = {
           { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
         ],
       },
+      // Generated opengraph-image routes: crawler-friendly, no security headers
+      {
+        source: '/:path*/opengraph-image',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
+        ],
+      },
+      // API og-photo proxy: crawler-friendly
+      {
+        source: '/api/v1/og-photo',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
+        ],
+      },
       // Global: only the headers that are safe for ALL resources (including images)
       {
         source: '/(.*)',

@@ -13,7 +13,7 @@ const DEFAULT_OG = {
   title: 'Electorate — Know Who Represents You',
   description:
     "Nigeria's definitive politician accountability and transparency platform.",
-  image: 'https://www.electorate.ng/meta-image.png',
+  image: 'https://dpsgvyqicwluogjzgnlt.supabase.co/storage/v1/object/public/politician-photos/meta/og-image.jpg',
   url: 'https://www.electorate.ng',
 };
 
@@ -32,7 +32,6 @@ function buildMinimalHtml(og: {
 <meta property="og:description" content="${og.description}" />
 <meta property="og:image" content="${og.image}" />
 <meta property="og:image:secure_url" content="${og.image}" />
-<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="${og.url}" />

@@ -190,7 +190,7 @@ async function applySuggestEdit(suggestion: Record<string, unknown>) {
     field_name: string;
     proposed_value: string;
   };
-  if (!payload?.field_name || payload.proposed_value === undefined) return;
+  if (!payload?.field_name) return;
 
   // Only allow known safe columns to be updated
   const allowedFields = [
@@ -203,11 +203,20 @@ async function applySuggestEdit(suggestion: Record<string, unknown>) {
 
   const field = payload.field_name;
 
+  // For photo_url: the uploaded image is stored in suggestion.image_url.
+  // proposed_value is just a description the user typed — use image_url instead.
+  const effectiveValue =
+    field === 'photo_url' && suggestion.image_url
+      ? (suggestion.image_url as string)
+      : payload.proposed_value;
+
+  if (!effectiveValue) return;
+
   if (allowedFields.includes(field)) {
     // Direct column update on the politicians table
     const { error } = await supabaseAdmin!
       .from('politicians')
-      .update({ [field]: payload.proposed_value })
+      .update({ [field]: effectiveValue })
       .eq('id', suggestion.politician_id as string);
 
     if (error) console.error(`applySuggestEdit update failed for field ${field}:`, error);

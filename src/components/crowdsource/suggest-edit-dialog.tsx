@@ -99,7 +99,8 @@ export function SuggestEditDialog({ politicianId, politicianName, currentData, t
       formData.append('politician_id', politicianId);
       formData.append('field_name', fieldName);
       formData.append('current_value', currentValue);
-      formData.append('proposed_value', proposedValue);
+      // For photo_url: proposed_value is the filename; the real value is the uploaded image.
+      formData.append('proposed_value', proposedValue || (fieldName === 'photo_url' && photo ? photo.name : '—'));
       formData.append('reason', reason);
 
       if (sourceUrl.trim()) formData.append('source_url', sourceUrl.trim());
@@ -197,17 +198,35 @@ export function SuggestEditDialog({ politicianId, politicianName, currentData, t
             <Input id="current_value" value={currentValue} readOnly placeholder="Current value" />
           </div>
 
-          <div className="grid gap-2">
-            <Label htmlFor="proposed_value">Proposed value</Label>
-            <Textarea
-              id="proposed_value"
-              value={proposedValue}
-              onChange={(event) => setProposedValue(event.target.value)}
-              placeholder="What should this be changed to?"
-              required
-              rows={3}
-            />
-          </div>
+          {fieldName === 'photo_url' ? (
+            <div className="grid gap-2">
+              <Label htmlFor="photo">New photo <span className="text-destructive">*</span></Label>
+              <Input
+                id="photo"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+                required
+                onChange={(event) => {
+                  const file = event.target.files?.[0] ?? null;
+                  setPhoto(file);
+                  if (file) setProposedValue(file.name);
+                }}
+              />
+              <p className="text-xs text-muted-foreground">Upload a clear, recent photo. Converted to optimized WebP on upload.</p>
+            </div>
+          ) : (
+            <div className="grid gap-2">
+              <Label htmlFor="proposed_value">Proposed value</Label>
+              <Textarea
+                id="proposed_value"
+                value={proposedValue}
+                onChange={(event) => setProposedValue(event.target.value)}
+                placeholder="What should this be changed to?"
+                required
+                rows={3}
+              />
+            </div>
+          )}
 
           <div className="grid gap-2">
             <Label htmlFor="reason">Reason</Label>
@@ -232,16 +251,18 @@ export function SuggestEditDialog({ politicianId, politicianName, currentData, t
             />
           </div>
 
-          <div className="grid gap-2">
-            <Label htmlFor="photo">Supporting image (optional)</Label>
-            <Input
-              id="photo"
-              type="file"
-              accept="image/png,image/jpeg,image/webp"
-              onChange={(event) => setPhoto(event.target.files?.[0] ?? null)}
-            />
-            <p className="text-xs text-muted-foreground">Images are converted to optimized WebP and stored in Electorate storage.</p>
-          </div>
+          {fieldName !== 'photo_url' && (
+            <div className="grid gap-2">
+              <Label htmlFor="photo">Supporting image (optional)</Label>
+              <Input
+                id="photo"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+                onChange={(event) => setPhoto(event.target.files?.[0] ?? null)}
+              />
+              <p className="text-xs text-muted-foreground">Images are converted to optimized WebP and stored in Electorate storage.</p>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="grid gap-2">

@@ -11,7 +11,7 @@ const suggestEditSchema = z.object({
   politician_id: z.string().uuid(),
   field_name: z.string().trim().min(2).max(64),
   current_value: z.string().trim().max(500).optional(),
-  proposed_value: z.string().trim().min(1).max(2000),
+  proposed_value: z.string().trim().max(2000),  // can be empty when photo is the contribution
   reason: z.string().trim().min(3).max(4000),
   source_url: z.string().trim().url().optional(),
   submitter_name: z.string().trim().max(80).optional(),

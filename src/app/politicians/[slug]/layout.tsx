@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : p.biography?.slice(0, 155) ?? `Track ${p.full_name}'s voting record, promises, and accountability score on Electorate.`;
 
   const ogImage = `https://www.electorate.ng/politicians/${slug}/opengraph-image`;
-  const twitterImage = 'https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg';
+  const twitterImage = 'https://iili.io/BRvekCJ.jpg';
 
   return {
     title,

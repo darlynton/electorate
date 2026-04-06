@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Nigeria's definitive politician accountability and transparency platform.",
     images: [
       {
-        url: "https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg",
+        url: "https://iili.io/BRvekCJ.jpg",
         width: 1200,
         height: 630,
         alt: "Electorate - Know Who Represents You",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Electorate — Know Who Represents You",
     description:
       "Nigeria's definitive politician accountability and transparency platform.",
-    images: ["https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg"],
+    images: ["https://iili.io/BRvekCJ.jpg"],
     creator: "@electorating",
   },
   robots: {

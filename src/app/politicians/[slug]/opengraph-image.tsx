@@ -13,6 +13,23 @@ export const alt = 'Politician profile';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+/* ── Google Fonts URLs (TTF for Satori) ───────────────────────────────── */
+const DM_SANS_REGULAR =
+  'https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTg.ttf';
+const DM_SANS_BOLD =
+  'https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZthTg.ttf';
+const FRAUNCES_BOLD =
+  'https://fonts.gstatic.com/s/fraunces/v38/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIcUByjDg.ttf';
+
+async function fetchFont(url: string): Promise<ArrayBuffer | null> {
+  try {
+    const res = await fetch(url);
+    return res.ok ? await res.arrayBuffer() : null;
+  } catch {
+    return null;
+  }
+}
+
 /* ── party accent colours ─────────────────────────────────────────────── */
 const PARTY_COLORS: Record<string, string> = {
   APC: '#16a34a',
@@ -171,6 +188,13 @@ export default async function OGImage({
 
     const photoSrc = p.photoUrl ? await fetchPhoto(p.photoUrl) : null;
 
+    // Load fonts for Satori
+    const [dmSansRegular, dmSansBold, frauncesFont] = await Promise.all([
+      fetchFont(DM_SANS_REGULAR),
+      fetchFont(DM_SANS_BOLD),
+      fetchFont(FRAUNCES_BOLD),
+    ]);
+
     const dimRows = p.dims.map((dim: DimensionConfig) => ({
       label: dim.label,
       avg: p.avgs[dim.key] ?? 0,
@@ -185,6 +209,7 @@ export default async function OGImage({
             width: '100%',
             height: '100%',
             backgroundColor: '#271E5D',
+            fontFamily: 'DM Sans',
           }}
         >
           {/* Main body */}
@@ -195,8 +220,8 @@ export default async function OGImage({
               flex: 1,
               paddingLeft: 56,
               paddingRight: 56,
-              paddingTop: 40,
-              paddingBottom: 20,
+              paddingTop: 44,
+              paddingBottom: 44,
             }}
           >
             {/* ═══ Left column ═══ */}
@@ -213,7 +238,8 @@ export default async function OGImage({
                 style={{
                   display: 'flex',
                   fontSize: 46,
-                  fontWeight: 800,
+                  fontWeight: 700,
+                  fontFamily: 'Fraunces',
                   color: 'white',
                   marginBottom: 14,
                 }}
@@ -346,7 +372,8 @@ export default async function OGImage({
                   display: 'flex',
                   justifyContent: 'center',
                   fontSize: 72,
-                  fontWeight: 800,
+                  fontWeight: 700,
+                  fontFamily: 'Fraunces',
                   color: sc,
                   marginBottom: 0,
                 }}
@@ -412,42 +439,22 @@ export default async function OGImage({
             </div>
           </div>
 
-          {/* Footer */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingLeft: 56,
-              paddingRight: 56,
-              paddingTop: 10,
-              paddingBottom: 14,
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                fontSize: 18,
-                fontWeight: 700,
-                color: '#7C6FE0',
-              }}
-            >
-              electorate.ng
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                fontSize: 15,
-                color: '#6b64a8',
-              }}
-            >
-              Know Who Represents You
-            </div>
-          </div>
         </div>
       ),
-      { ...size },
+      {
+        ...size,
+        fonts: [
+          ...(dmSansRegular
+            ? [{ name: 'DM Sans', data: dmSansRegular, weight: 400 as const }]
+            : []),
+          ...(dmSansBold
+            ? [{ name: 'DM Sans', data: dmSansBold, weight: 700 as const }]
+            : []),
+          ...(frauncesFont
+            ? [{ name: 'Fraunces', data: frauncesFont, weight: 700 as const }]
+            : []),
+        ],
+      },
     );
   } catch (e) {
     console.error('OG image generation error:', e);

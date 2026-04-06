@@ -7,7 +7,7 @@ export const dynamic = 'force-static';
  * Uses jsDelivr CDN (Cloudflare-backed, clean headers, no CSP sandbox).
  */
 export async function GET() {
-  const image = 'https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg';
+  const image = 'https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg';
 
   const html = `<!doctype html>
 <html lang="en">

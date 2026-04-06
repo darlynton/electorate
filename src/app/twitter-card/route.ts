@@ -14,8 +14,8 @@ export async function GET() {
     <meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.electorate.ng/twitter-card" />
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
-    <meta property="og:image:secure_url" content="https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
+    <meta property="og:image" content="https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
+    <meta property="og:image:secure_url" content="https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -25,7 +25,7 @@ export async function GET() {
     <meta name="twitter:creator" content="@electorating" />
     <meta name="twitter:title" content="Electorate — Know Who Represents You" />
     <meta name="twitter:description" content="Nigeria's definitive politician accountability and transparency platform." />
-    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
+    <meta name="twitter:image" content="https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg" />
     <meta name="twitter:image:alt" content="Electorate — Know Who Represents You" />
   </head>
   <body>

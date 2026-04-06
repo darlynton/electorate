@@ -24,30 +24,38 @@ const nextConfig: NextConfig = {
   },
 
   // ── Security & performance headers ────────────────────────────────────────
+  // NOTE: Restrictive headers (X-Frame-Options, Permissions-Policy, etc.) are
+  // applied via middleware instead, so they only apply to HTML pages — NOT to
+  // images/assets. Twitter's image fetcher rejects images with X-Frame-Options: DENY.
   async headers() {
     return [
-      // Serve images with crawler-friendly headers (no X-Frame-Options, long cache)
+      // Images: crawler-friendly, long cache, CORS
       {
         source: '/:path*.(jpg|jpeg|png|gif|svg|webp)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
         ],
       },
+      // API og-image: crawler-friendly
+      {
+        source: '/api/v1/og-image',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
+        ],
+      },
+      // Global: only the headers that are safe for ALL resources (including images)
       {
         source: '/(.*)',
         headers: [
-          { key: 'X-Frame-Options', value: 'DENY' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
           {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(self)',
           },
         ],
       },

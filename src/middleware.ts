@@ -13,7 +13,7 @@ const DEFAULT_OG = {
   title: 'Electorate — Know Who Represents You',
   description:
     "Nigeria's definitive politician accountability and transparency platform.",
-  image: 'https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg',
+  image: 'https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg',
   url: 'https://www.electorate.ng',
 };
 
@@ -49,15 +49,29 @@ function buildMinimalHtml(og: {
 </html>`;
 }
 
+const IS_ASSET = /\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff2?)$/i;
+
+// Security headers that should only be applied to HTML pages, NOT images/assets.
+// Twitter's image fetcher rejects images with X-Frame-Options: DENY.
+function addSecurityHeaders(response: NextResponse) {
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(self)');
+  return response;
+}
+
 export function middleware(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
-
-  // Only intercept Twitterbot
-  if (!BOT_UA.test(ua)) {
-    return NextResponse.next();
-  }
-
   const { pathname } = request.nextUrl;
+
+  // For non-bots: add security headers to HTML pages only, skip images/assets
+  if (!BOT_UA.test(ua)) {
+    const response = NextResponse.next();
+    if (!IS_ASSET.test(pathname) && !pathname.startsWith('/api/v1/og-image')) {
+      addSecurityHeaders(response);
+    }
+    return response;
+  }
 
   // Don't intercept actual image/asset requests — let them through
   if (

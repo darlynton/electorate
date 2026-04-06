@@ -13,7 +13,7 @@ const DEFAULT_OG = {
   title: 'Electorate — Know Who Represents You',
   description:
     "Nigeria's definitive politician accountability and transparency platform.",
-  image: 'https://dpsgvyqicwluogjzgnlt.supabase.co/storage/v1/object/public/politician-photos/meta/og-image.jpg',
+  image: 'https://raw.githubusercontent.com/darlynton/electorate/main/public/meta-image.jpg',
   url: 'https://www.electorate.ng',
 };
 

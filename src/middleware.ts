@@ -64,7 +64,10 @@ export function middleware(request: NextRequest) {
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
-    pathname.startsWith('/twitter-card') ||
+    pathname === '/twitter-card' ||
+    pathname.startsWith('/twitter-card/') ||
+    pathname === '/twitter-card-control' ||
+    pathname.startsWith('/twitter-card-control/') ||
     pathname.startsWith('/favicon') ||
     pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff2?)$/i) ||
     pathname.includes('opengraph-image')

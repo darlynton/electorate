@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Nigeria's definitive politician accountability and transparency platform.",
     images: [
       {
-        url: "https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg",
+        url: "https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg",
         width: 1200,
         height: 630,
         alt: "Electorate - Know Who Represents You",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Electorate — Know Who Represents You",
     description:
       "Nigeria's definitive politician accountability and transparency platform.",
-    images: ["https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg"],
+    images: ["https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg"],
     creator: "@electorating",
   },
   robots: {

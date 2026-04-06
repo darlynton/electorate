@@ -95,13 +95,38 @@ export function middleware(request: NextRequest) {
   const politicianMatch = pathname.match(/^\/politicians\/([^/]+)\/?$/);
   if (politicianMatch) {
     const slug = politicianMatch[1];
-    const og = {
+    const origin = request.nextUrl.origin;
+
+    // Fetch real politician data via our own API
+    let og = {
       title: `${slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} | Electorate`,
-      description:
-        "Track their voting record, promises, and accountability score on Electorate.",
+      description: 'Track their voting record, promises, and accountability score on Electorate.',
       image: DEFAULT_OG.image,
       url: `https://www.electorate.ng/politicians/${slug}`,
     };
+
+    try {
+      const res = await fetch(`${origin}/api/v1/politicians/${slug}`, {
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        const json = await res.json();
+        const p = json.data ?? json.politician ?? json;
+        if (p?.full_name) {
+          og.title = `${p.full_name} | Electorate`;
+        }
+        if (p?.biography) {
+          og.description = p.biography.slice(0, 155) + '…';
+        }
+        if (p?.photo_url) {
+          // Proxy Supabase photos through our API to strip x-robots-tag
+          og.image = `${origin}/api/v1/og-photo?url=${encodeURIComponent(p.photo_url)}`;
+        }
+      }
+    } catch {
+      // Fallback to slug-derived metadata on error
+    }
+
     return new NextResponse(buildMinimalHtml(og), {
       status: 200,
       headers: { 'Content-Type': 'text/html; charset=utf-8' },

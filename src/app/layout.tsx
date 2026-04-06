@@ -61,16 +61,11 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Electorate - Know Who Represents You",
       },
-      {
-        url: "https://www.electorate.ng/meta-image-square.jpg?v=2026",
-        width: 1200,
-        height: 1200,
-        alt: "Electorate",
-      },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@electorateng",
     title: "Electorate — Know Who Represents You",
     description:
       "Nigeria's definitive politician accountability and transparency platform.",

@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@electorateng',
       title,
       description,
       images: [ogImage],

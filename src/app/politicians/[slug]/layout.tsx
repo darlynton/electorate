@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ? `${currentPosition.title ?? currentPosition.chamber} · ${currentPosition.party} · ${p.state_of_origin}. ${p.biography?.slice(0, 120) ?? 'Track their voting record, promises, and accountability score on Electorate.'}…`
     : p.biography?.slice(0, 155) ?? `Track ${p.full_name}'s voting record, promises, and accountability score on Electorate.`;
 
-  const ogImage = `/politicians/${slug}/opengraph-image`;
+  const ogImage = `https://www.electorate.ng/politicians/${slug}/opengraph-image`;
 
   return {
     title,

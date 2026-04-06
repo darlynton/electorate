@@ -56,13 +56,13 @@ export const metadata: Metadata = {
       "Nigeria's definitive politician accountability and transparency platform.",
     images: [
       {
-        url: "/meta-image.jpg",
+        url: "https://www.electorate.ng/meta-image.jpg",
         width: 1200,
         height: 630,
         alt: "Electorate - Know Who Represents You",
       },
       {
-        url: "/meta-image-square.jpg",
+        url: "https://www.electorate.ng/meta-image-square.jpg",
         width: 1200,
         height: 1200,
         alt: "Electorate",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Electorate — Know Who Represents You",
     description:
       "Nigeria's definitive politician accountability and transparency platform.",
-    images: ["/meta-image.jpg"],
+    images: ["https://www.electorate.ng/meta-image.jpg"],
     creator: "@electorateng",
   },
   robots: {

@@ -82,7 +82,7 @@ export function middleware(request: NextRequest) {
       title: `${slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} | Electorate`,
       description:
         "Track their voting record, promises, and accountability score on Electorate.",
-      image: `https://www.electorate.ng/politicians/${slug}/opengraph-image`,
+      image: DEFAULT_OG.image,
       url: `https://www.electorate.ng/politicians/${slug}`,
     };
     return new NextResponse(buildMinimalHtml(og), {

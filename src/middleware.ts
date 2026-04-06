@@ -13,7 +13,7 @@ const DEFAULT_OG = {
   title: 'Electorate — Know Who Represents You',
   description:
     "Nigeria's definitive politician accountability and transparency platform.",
-  image: 'https://raw.githubusercontent.com/darlynton/electorate/main/public/meta-image.jpg',
+  image: 'https://cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg',
   url: 'https://www.electorate.ng',
 };
 
@@ -67,6 +67,8 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/twitter-card/') ||
     pathname === '/twitter-card-control' ||
     pathname.startsWith('/twitter-card-control/') ||
+    pathname === '/og-card-test' ||
+    pathname.startsWith('/og-card-test/') ||
     pathname.startsWith('/favicon') ||
     pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff2?)$/i) ||
     pathname.includes('opengraph-image')

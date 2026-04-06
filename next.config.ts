@@ -26,6 +26,14 @@ const nextConfig: NextConfig = {
   // ── Security & performance headers ────────────────────────────────────────
   async headers() {
     return [
+      // Serve images with crawler-friendly headers (no X-Frame-Options, long cache)
+      {
+        source: '/:path*.(jpg|jpeg|png|gif|svg|webp)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+        ],
+      },
       {
         source: '/(.*)',
         headers: [

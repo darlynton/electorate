@@ -16,6 +16,7 @@ import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAuth } from '@/lib/use-auth';
+import { LocationSetupDialog } from '@/components/auth/location-setup-dialog';
 import { getDimensions, type PoliticianType, type DimensionConfig } from '@/lib/scoring';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -110,12 +111,13 @@ export function RatingSection({
   chamber,
   onRatingsLoaded,
 }: RatingSectionProps) {
-  const { session } = useAuth();
+  const { session, profile, canUpdateLocation } = useAuth();
   const [data, setData] = useState<RatingsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [locationDialogOpen, setLocationDialogOpen] = useState(false);
 
   // User's scores
   const [scores, setScores] = useState<Record<string, number>>({});
@@ -409,9 +411,26 @@ export function RatingSection({
             <div className="text-center py-8">
               <MapPin className="h-10 w-10 text-amber-500 mx-auto mb-3" />
               <p className="font-medium mb-1">Set your location first</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-4">
                 You need to set your state to rate officials in your constituency.
               </p>
+              <Button
+                className="gap-2 bg-[#271E5D] hover:bg-[#271E5D]/90 dark:bg-[#5D49D6] dark:hover:bg-[#5D49D6]/90"
+                onClick={() => setLocationDialogOpen(true)}
+              >
+                <MapPin className="h-4 w-4" />
+                Set Location
+              </Button>
+              <LocationSetupDialog
+                open={locationDialogOpen}
+                onOpenChange={setLocationDialogOpen}
+                profile={profile}
+                canUpdate={canUpdateLocation}
+                onLocationSaved={() => {
+                  setLocationDialogOpen(false);
+                  fetchRatings();
+                }}
+              />
             </div>
           ) : /* Not in constituency */ data && !data.in_constituency ? (
             <div className="text-center py-8">

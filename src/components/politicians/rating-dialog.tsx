@@ -16,6 +16,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAuth } from '@/lib/use-auth';
+import { LocationSetupDialog } from '@/components/auth/location-setup-dialog';
 import { getDimensions, type PoliticianType } from '@/lib/scoring';
 import type { RatingsData } from './rating-section';
 
@@ -96,8 +97,9 @@ export function RatingDialog({
   triggerLabel = 'Rate Official',
   triggerVariant = 'hero',
 }: RatingDialogProps) {
-  const { session } = useAuth();
+  const { session, profile, canUpdateLocation } = useAuth();
   const [open, setOpen] = useState(false);
+  const [locationDialogOpen, setLocationDialogOpen] = useState(false);
   const [data, setData] = useState<RatingsData | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -242,9 +244,26 @@ export function RatingDialog({
           <div className="text-center py-10">
             <MapPin className="h-10 w-10 text-amber-500 mx-auto mb-3" />
             <p className="font-medium mb-1">Set your location first</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-4">
               Update your state in your profile so we can verify you&apos;re a constituent.
             </p>
+            <Button
+              className="gap-2 bg-[#271E5D] hover:bg-[#271E5D]/90 dark:bg-[#5D49D6] dark:hover:bg-[#5D49D6]/90"
+              onClick={() => setLocationDialogOpen(true)}
+            >
+              <MapPin className="h-4 w-4" />
+              Set Location
+            </Button>
+            <LocationSetupDialog
+              open={locationDialogOpen}
+              onOpenChange={setLocationDialogOpen}
+              profile={profile}
+              canUpdate={canUpdateLocation}
+              onLocationSaved={() => {
+                setLocationDialogOpen(false);
+                fetchRatings();
+              }}
+            />
           </div>
         ) : data && !data.in_constituency ? (
           /* ── Outside constituency ────────────────────────────────── */

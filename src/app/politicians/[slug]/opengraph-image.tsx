@@ -111,8 +111,12 @@ async function fetchPhoto(url: string): Promise<string | null> {
     const res = await fetch(url);
     if (!res.ok) return null;
     const buf = Buffer.from(await res.arrayBuffer());
-    const pngBuf = await sharp(buf).resize(400, 400).png().toBuffer();
-    return `data:image/png;base64,${pngBuf.toString('base64')}`;
+    // Use JPEG at quality 75 and smaller size to keep overall OG image under 200KB
+    const jpegBuf = await sharp(buf)
+      .resize(300, 300, { fit: 'cover' })
+      .jpeg({ quality: 75 })
+      .toBuffer();
+    return `data:image/jpeg;base64,${jpegBuf.toString('base64')}`;
   } catch {
     return null;
   }
@@ -312,14 +316,14 @@ export default async function OGImage({
               <div
                 style={{
                   display: 'flex',
-                  width: 370,
-                  height: 370,
+                  width: 300,
+                  height: 300,
                   borderRadius: 20,
                   backgroundColor: '#3d3580',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#8b82c8',
-                  fontSize: 110,
+                  fontSize: 100,
                   fontWeight: 800,
                 }}
               >
@@ -327,8 +331,8 @@ export default async function OGImage({
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={photoSrc}
-                    width={370}
-                    height={370}
+                    width={300}
+                    height={300}
                     alt=""
                     style={{ borderRadius: 20 }}
                   />

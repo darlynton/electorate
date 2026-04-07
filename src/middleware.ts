@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from 'next/server';
  * that may interfere with Twitter's card crawler.
  */
 
-const BOT_UA = /Twitterbot|twitter\.com/i;
+const BOT_UA = /Twitterbot|twitter\.com|facebookexternalhit|Facebot|WhatsApp|TelegramBot|LinkedInBot|Slackbot|Discordbot|Googlebot|bingbot|Applebot/i;
 
 // Default OG metadata for the homepage
 const DEFAULT_OG = {

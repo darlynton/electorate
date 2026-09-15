@@ -355,6 +355,7 @@ CREATE INDEX IF NOT EXISTS idx_politicians_fts ON politicians USING GIN (fts);
 -- ===========================================
 
 -- View for politicians with current position
+DROP VIEW IF EXISTS politicians_with_position;
 CREATE OR REPLACE VIEW politicians_with_position AS
 SELECT 
   p.*,
@@ -367,6 +368,7 @@ FROM politicians p
 LEFT JOIN positions pos ON p.id = pos.politician_id AND pos.is_current = TRUE;
 
 -- View for politician stats
+DROP VIEW IF EXISTS politician_stats;
 CREATE OR REPLACE VIEW politician_stats AS
 SELECT 
   p.id,

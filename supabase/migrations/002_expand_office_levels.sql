@@ -13,6 +13,9 @@ UPDATE positions SET office_level = 'federal' WHERE office_level IS NULL;
 
 -- Add CHECK constraint
 ALTER TABLE positions
+  DROP CONSTRAINT IF EXISTS positions_office_level_check;
+
+ALTER TABLE positions
   ADD CONSTRAINT positions_office_level_check
   CHECK (office_level IN ('federal', 'state', 'local'));
 

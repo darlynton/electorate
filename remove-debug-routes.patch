@@ -1,0 +1,460 @@
+diff --git a/src/app/card-test-a/route.ts b/src/app/card-test-a/route.ts
+deleted file mode 100644
+index 1bcb2f1..0000000
+--- a/src/app/card-test-a/route.ts
++++ /dev/null
+@@ -1,37 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test A: Uses wsrv.nl (Cloudflare image proxy) — re-encoded image, clean headers.
+- * Brand-new URL that X has never cached.
+- */
+-export async function GET() {
+-  // wsrv.nl fetches our image, re-encodes it, serves through Cloudflare
+-  const image = 'https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test A (wsrv.nl proxy)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-b/route.ts b/src/app/card-test-b/route.ts
+deleted file mode 100644
+index 70a1cfb..0000000
+--- a/src/app/card-test-b/route.ts
++++ /dev/null
+@@ -1,38 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test B: Uses our own API route to serve the image (bypasses static file serving).
+- * Brand-new URL that X has never cached.
+- */
+-export async function GET() {
+-  // Image served by our own API route — full control over headers, no middleware
+-  const image = 'https://www.electorate.ng/api/v1/og-image';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:type" content="image/jpeg" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test B (API-served image)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-c/route.ts b/src/app/card-test-c/route.ts
+deleted file mode 100644
+index 55741ed..0000000
+--- a/src/app/card-test-c/route.ts
++++ /dev/null
+@@ -1,36 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test C: Uses the SAME Cloudinary image that worked on /twitter-card-control
+- * but on a fresh new URL. This is the CONTROL to prove the test setup works.
+- */
+-export async function GET() {
+-  const image = 'https://res.cloudinary.com/demo/image/upload/sample.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="864" />
+-<meta property="og:image:height" content="576" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test C (Cloudinary control)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-d/route.ts b/src/app/card-test-d/route.ts
+deleted file mode 100644
+index 061a80f..0000000
+--- a/src/app/card-test-d/route.ts
++++ /dev/null
+@@ -1,37 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test D: Uses freeimage.host (iili.io CDN backed by Cloudflare).
+- * Image is uploaded and re-encoded by their service.
+- * Brand-new URL that X has never cached.
+- */
+-export async function GET() {
+-  const image = 'https://iili.io/BRvekCJ.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test D (freeimage.host / iili.io via Cloudflare)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-e/route.ts b/src/app/card-test-e/route.ts
+deleted file mode 100644
+index fe24bdb..0000000
+--- a/src/app/card-test-e/route.ts
++++ /dev/null
+@@ -1,36 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test E: Uses OUR image uploaded to Cloudinary (same domain as working card-test-c).
+- * Brand-new URL that X has never cached.
+- */
+-export async function GET() {
+-  const image = 'https://res.cloudinary.com/demo/image/upload/v1775504263/meta-image_qbcm32.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test E (our image on Cloudinary)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-f/route.ts b/src/app/card-test-f/route.ts
+deleted file mode 100644
+index aa38319..0000000
+--- a/src/app/card-test-f/route.ts
++++ /dev/null
+@@ -1,36 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test F: Re-encoded image (116KB) on Cloudinary.
+- * Original 353KB was rejected by X. Re-encoded version should work.
+- */
+-export async function GET() {
+-  const image = 'https://res.cloudinary.com/demo/image/upload/v1775504935/meta-image-reencoded_j1bnrc.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test F (re-encoded 116KB on Cloudinary)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/card-test-g/route.ts b/src/app/card-test-g/route.ts
+deleted file mode 100644
+index 79ec08e..0000000
+--- a/src/app/card-test-g/route.ts
++++ /dev/null
+@@ -1,37 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Test G: Self-hosted re-encoded image (116KB, clean headers).
+- * Previous self-hosted tests used the old 353KB image AND had X-Frame-Options: DENY.
+- * Now both issues are fixed. This tests if self-hosting works.
+- */
+-export async function GET() {
+-  const image = 'https://www.electorate.ng/meta-image.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8" />
+-<title>Electorate</title>
+-<meta property="og:title" content="Electorate — Know Who Represents You" />
+-<meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-<meta property="og:type" content="website" />
+-<meta property="og:url" content="https://www.electorate.ng" />
+-<meta property="og:image" content="${image}" />
+-<meta property="og:image:width" content="1200" />
+-<meta property="og:image:height" content="630" />
+-<meta name="twitter:card" content="summary_large_image" />
+-<meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-<meta name="twitter:description" content="Nigeria's definitive politician accountability platform." />
+-<meta name="twitter:image" content="${image}" />
+-</head>
+-<body><p>Card test G (self-hosted re-encoded image)</p></body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: { 'content-type': 'text/html; charset=utf-8' },
+-  });
+-}
+diff --git a/src/app/og-card-test/route.ts b/src/app/og-card-test/route.ts
+deleted file mode 100644
+index df85560..0000000
+--- a/src/app/og-card-test/route.ts
++++ /dev/null
+@@ -1,43 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-/**
+- * Brand-new test endpoint that X/Twitter has never seen before.
+- * Uses jsDelivr CDN (Cloudflare-backed, clean headers, no CSP sandbox).
+- */
+-export async function GET() {
+-  const image = 'https://wsrv.nl/?url=cdn.jsdelivr.net/gh/darlynton/electorate@main/public/meta-image.jpg';
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-  <head>
+-    <meta charset="utf-8" />
+-    <title>Electorate — Know Who Represents You</title>
+-
+-    <meta property="og:title" content="Electorate — Know Who Represents You" />
+-    <meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-    <meta property="og:type" content="website" />
+-    <meta property="og:url" content="https://www.electorate.ng" />
+-    <meta property="og:image" content="${image}" />
+-    <meta property="og:image:width" content="1200" />
+-    <meta property="og:image:height" content="630" />
+-
+-    <meta name="twitter:card" content="summary_large_image" />
+-    <meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-    <meta name="twitter:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-    <meta name="twitter:image" content="${image}" />
+-  </head>
+-  <body>
+-    <p>Electorate OG card test.</p>
+-  </body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: {
+-      'content-type': 'text/html; charset=utf-8',
+-      'cache-control': 'public, max-age=0, must-revalidate',
+-    },
+-  });
+-}
+diff --git a/src/app/twitter-card-control/route.ts b/src/app/twitter-card-control/route.ts
+deleted file mode 100644
+index d5caf93..0000000
+--- a/src/app/twitter-card-control/route.ts
++++ /dev/null
+@@ -1,39 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-export async function GET() {
+-  const html = `<!doctype html>
+-<html lang="en">
+-  <head>
+-    <meta charset="utf-8" />
+-    <title>Electorate Card Control</title>
+-
+-    <meta property="og:title" content="Electorate Card Control" />
+-    <meta property="og:description" content="Control endpoint with external image host for debugging X card rendering." />
+-    <meta property="og:type" content="website" />
+-    <meta property="og:url" content="https://www.electorate.ng/twitter-card-control" />
+-    <meta property="og:image" content="https://res.cloudinary.com/demo/image/upload/sample.jpg" />
+-    <meta property="og:image:secure_url" content="https://res.cloudinary.com/demo/image/upload/sample.jpg" />
+-    <meta property="og:image:type" content="image/jpeg" />
+-
+-    <meta name="twitter:card" content="summary_large_image" />
+-    <meta name="twitter:site" content="@electorating" />
+-    <meta name="twitter:creator" content="@electorating" />
+-    <meta name="twitter:title" content="Electorate Card Control" />
+-    <meta name="twitter:description" content="Control endpoint with external image host for debugging X card rendering." />
+-    <meta name="twitter:image" content="https://res.cloudinary.com/demo/image/upload/sample.jpg" />
+-  </head>
+-  <body>
+-    <p>Electorate control card endpoint.</p>
+-  </body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: {
+-      'content-type': 'text/html; charset=utf-8',
+-      'cache-control': 'public, max-age=0, must-revalidate',
+-    },
+-  });
+-}
+diff --git a/src/app/twitter-card/route.ts b/src/app/twitter-card/route.ts
+deleted file mode 100644
+index 4e48a67..0000000
+--- a/src/app/twitter-card/route.ts
++++ /dev/null
+@@ -1,43 +0,0 @@
+-import { NextResponse } from 'next/server';
+-
+-export const dynamic = 'force-static';
+-
+-export async function GET() {
+-
+-  const html = `<!doctype html>
+-<html lang="en">
+-  <head>
+-    <meta charset="utf-8" />
+-    <title>Electorate — Know Who Represents You</title>
+-
+-    <meta property="og:title" content="Electorate — Know Who Represents You" />
+-    <meta property="og:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-    <meta property="og:type" content="website" />
+-    <meta property="og:url" content="https://www.electorate.ng/twitter-card" />
+-    <meta property="og:image" content="https://iili.io/BRvekCJ.jpg" />
+-    <meta property="og:image:secure_url" content="https://iili.io/BRvekCJ.jpg" />
+-    <meta property="og:image:type" content="image/jpeg" />
+-    <meta property="og:image:width" content="1200" />
+-    <meta property="og:image:height" content="630" />
+-
+-    <meta name="twitter:card" content="summary_large_image" />
+-    <meta name="twitter:site" content="@electorating" />
+-    <meta name="twitter:creator" content="@electorating" />
+-    <meta name="twitter:title" content="Electorate — Know Who Represents You" />
+-    <meta name="twitter:description" content="Nigeria's definitive politician accountability and transparency platform." />
+-    <meta name="twitter:image" content="https://iili.io/BRvekCJ.jpg" />
+-    <meta name="twitter:image:alt" content="Electorate — Know Who Represents You" />
+-  </head>
+-  <body>
+-    <p>Electorate card endpoint.</p>
+-  </body>
+-</html>`;
+-
+-  return new NextResponse(html, {
+-    status: 200,
+-    headers: {
+-      'content-type': 'text/html; charset=utf-8',
+-      'cache-control': 'public, max-age=0, must-revalidate',
+-    },
+-  });
+-}
+diff --git a/src/middleware.ts b/src/middleware.ts
+index 43a98e9..b314841 100644
+--- a/src/middleware.ts
++++ b/src/middleware.ts
+@@ -77,13 +77,6 @@ export async function middleware(request: NextRequest) {
+   if (
+     pathname.startsWith('/api/') ||
+     pathname.startsWith('/_next/') ||
+-    pathname === '/twitter-card' ||
+-    pathname.startsWith('/twitter-card/') ||
+-    pathname === '/twitter-card-control' ||
+-    pathname.startsWith('/twitter-card-control/') ||
+-    pathname === '/og-card-test' ||
+-    pathname.startsWith('/og-card-test/') ||
+-    pathname.startsWith('/card-test-') ||
+     pathname.startsWith('/favicon') ||
+     pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff2?)$/i) ||
+     pathname.includes('opengraph-image')

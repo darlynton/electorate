@@ -36,12 +36,14 @@ ALTER TABLE otp_rate_limits ENABLE ROW LEVEL SECURITY;
 
 -- Only service-role (server) can touch these tables
 -- No public/anon access
+DROP POLICY IF EXISTS "Service role only — phone_verifications" ON phone_verifications;
 CREATE POLICY "Service role only — phone_verifications"
   ON phone_verifications
   FOR ALL
   USING (false)
   WITH CHECK (false);
 
+DROP POLICY IF EXISTS "Service role only — otp_rate_limits" ON otp_rate_limits;
 CREATE POLICY "Service role only — otp_rate_limits"
   ON otp_rate_limits
   FOR ALL

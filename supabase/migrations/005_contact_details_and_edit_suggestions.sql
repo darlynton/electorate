@@ -63,16 +63,19 @@ CREATE INDEX IF NOT EXISTS idx_edit_suggestions_submitted_by
 ALTER TABLE edit_suggestions ENABLE ROW LEVEL SECURITY;
 
 -- Everyone can read approved suggestions (public transparency)
+DROP POLICY IF EXISTS "Public read approved suggestions" ON edit_suggestions;
 CREATE POLICY "Public read approved suggestions"
   ON edit_suggestions FOR SELECT
   USING (status = 'approved');
 
 -- Users can read their own pending/rejected suggestions
+DROP POLICY IF EXISTS "Users read own suggestions" ON edit_suggestions;
 CREATE POLICY "Users read own suggestions"
   ON edit_suggestions FOR SELECT
   USING (auth.uid() = submitted_by);
 
 -- Users can insert suggestions
+DROP POLICY IF EXISTS "Users insert suggestions" ON edit_suggestions;
 CREATE POLICY "Users insert suggestions"
   ON edit_suggestions FOR INSERT
   WITH CHECK (auth.uid() = submitted_by);

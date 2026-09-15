@@ -50,6 +50,7 @@ CREATE INDEX IF NOT EXISTS idx_constituency_lga_map_fc
 -- -----------------------------------------------
 ALTER TABLE constituency_lga_map ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Public read constituency map" ON constituency_lga_map;
 CREATE POLICY "Public read constituency map"
   ON constituency_lga_map FOR SELECT USING (true);
 

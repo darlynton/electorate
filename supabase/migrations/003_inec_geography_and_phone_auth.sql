@@ -141,18 +141,29 @@ ALTER TABLE lga_chairmanships ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_profiles ENABLE ROW LEVEL SECURITY;
 
 -- Public read for geographic data
+DROP POLICY IF EXISTS "Public read inec_states" ON inec_states;
 CREATE POLICY "Public read inec_states" ON inec_states FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read inec_lgas" ON inec_lgas;
 CREATE POLICY "Public read inec_lgas" ON inec_lgas FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read inec_wards" ON inec_wards;
 CREATE POLICY "Public read inec_wards" ON inec_wards FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read inec_polling_units" ON inec_polling_units;
 CREATE POLICY "Public read inec_polling_units" ON inec_polling_units FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read senatorial_districts" ON senatorial_districts;
 CREATE POLICY "Public read senatorial_districts" ON senatorial_districts FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read federal_constituencies" ON federal_constituencies;
 CREATE POLICY "Public read federal_constituencies" ON federal_constituencies FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read state_constituencies" ON state_constituencies;
 CREATE POLICY "Public read state_constituencies" ON state_constituencies FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read lga_chairmanships" ON lga_chairmanships;
 CREATE POLICY "Public read lga_chairmanships" ON lga_chairmanships FOR SELECT USING (true);
 
 -- User profiles: users can read own, update own
+DROP POLICY IF EXISTS "Users can read own profile" ON user_profiles;
 CREATE POLICY "Users can read own profile" ON user_profiles FOR SELECT USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can update own profile" ON user_profiles;
 CREATE POLICY "Users can update own profile" ON user_profiles FOR UPDATE USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can insert own profile" ON user_profiles;
 CREATE POLICY "Users can insert own profile" ON user_profiles FOR INSERT WITH CHECK (auth.uid() = id);
 
 -- Auto-update timestamp

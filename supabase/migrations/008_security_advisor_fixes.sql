@@ -58,6 +58,7 @@ ALTER TABLE public.phone_verifications ENABLE ROW LEVEL SECURITY;
 -- insert, select, update, and delete OTP records.
 -- No client-side / anon access is needed — OTP verification
 -- is handled exclusively through our API routes.
+DROP POLICY IF EXISTS "Service role full access on phone_verifications" ON public.phone_verifications;
 CREATE POLICY "Service role full access on phone_verifications"
   ON public.phone_verifications
   FOR ALL

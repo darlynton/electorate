@@ -247,27 +247,43 @@ ALTER TABLE tips ENABLE ROW LEVEL SECURITY;
 ALTER TABLE predictions ENABLE ROW LEVEL SECURITY;
 
 -- Public read access for politician data
+DROP POLICY IF EXISTS "Public read access for politicians" ON politicians;
 CREATE POLICY "Public read access for politicians" ON politicians FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for positions" ON positions;
 CREATE POLICY "Public read access for positions" ON positions FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for votes" ON votes;
 CREATE POLICY "Public read access for votes" ON votes FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for attendance" ON attendance;
 CREATE POLICY "Public read access for attendance" ON attendance FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for promises" ON promises;
 CREATE POLICY "Public read access for promises" ON promises FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for legal_records" ON legal_records;
 CREATE POLICY "Public read access for legal_records" ON legal_records FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for news_articles" ON news_articles;
 CREATE POLICY "Public read access for news_articles" ON news_articles FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for projects" ON projects;
 CREATE POLICY "Public read access for projects" ON projects FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Public read access for asset_declarations" ON asset_declarations;
 CREATE POLICY "Public read access for asset_declarations" ON asset_declarations FOR SELECT USING (true);
 
 -- Users can read their own data and public profiles
+DROP POLICY IF EXISTS "Users can read own data" ON users;
 CREATE POLICY "Users can read own data" ON users FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Users can update own data" ON users;
 CREATE POLICY "Users can update own data" ON users FOR UPDATE USING (auth.uid()::text = id::text);
+DROP POLICY IF EXISTS "Users can insert own data" ON users;
 CREATE POLICY "Users can insert own data" ON users FOR INSERT WITH CHECK (auth.uid()::text = id::text);
 
 -- Tips: users can create, read own tips
+DROP POLICY IF EXISTS "Users can create tips" ON tips;
 CREATE POLICY "Users can create tips" ON tips FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+DROP POLICY IF EXISTS "Users can read own tips" ON tips;
 CREATE POLICY "Users can read own tips" ON tips FOR SELECT USING (auth.uid()::text = user_id::text OR status = 'verified');
 
 -- Predictions: users can create and read own
+DROP POLICY IF EXISTS "Users can create predictions" ON predictions;
 CREATE POLICY "Users can create predictions" ON predictions FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+DROP POLICY IF EXISTS "Users can read own predictions" ON predictions;
 CREATE POLICY "Users can read own predictions" ON predictions FOR SELECT USING (true);
 
 -- ===========================================

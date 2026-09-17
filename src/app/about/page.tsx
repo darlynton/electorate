@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { supabase, supabaseAdmin } from '@/lib/supabase';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +14,9 @@ import {
   Mail,
   Twitter,
 } from 'lucide-react';
+import { NIGERIAN_STATES } from '@/types';
+
+export const revalidate = 3600;
 
 const values = [
   {
@@ -41,14 +45,34 @@ const values = [
   },
 ];
 
-const dataStats = [
-  { label: 'Elected Officials Tracked', value: '1,650+' },
-  { label: 'States Covered', value: '36 + FCT' },
-  { label: 'Promises Tracked', value: '2,847' },
-  { label: 'Legal Cases Monitored', value: '89+' },
-];
+export default async function AboutPage() {
+  const client = supabaseAdmin ?? supabase;
+  const countRows = async (table: 'politicians' | 'promises' | 'legal_records') => {
+    const { count, error } = await client
+      .from(table)
+      .select('*', { count: 'exact', head: true });
 
-export default function AboutPage() {
+    if (error) {
+      console.error(`Unable to count ${table}:`, error.message);
+      return 0;
+    }
+
+    return count ?? 0;
+  };
+
+  const [politicians, promises, legalRecords] = await Promise.all([
+    countRows('politicians'),
+    countRows('promises'),
+    countRows('legal_records'),
+  ]);
+
+  const dataStats = [
+    { label: 'Elected Officials Tracked', value: politicians.toLocaleString() },
+    { label: 'States Covered', value: `${NIGERIAN_STATES.filter((state) => state !== 'FCT').length} + FCT` },
+    ...(promises > 0 ? [{ label: 'Promises Tracked', value: promises.toLocaleString() }] : []),
+    ...(legalRecords > 0 ? [{ label: 'Legal Cases Monitored', value: legalRecords.toLocaleString() }] : []),
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -69,7 +93,7 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="container mx-auto px-4 -mt-8 relative z-10 mb-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className={`grid grid-cols-2 ${dataStats.length > 2 ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-3 md:gap-4`}>
           {dataStats.map((stat) => (
             <div
               key={stat.label}

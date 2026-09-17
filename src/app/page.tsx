@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import { NIGERIAN_STATES } from '@/types';
 
+export const revalidate = 3600;
+
 const partyBadgeClass = (party: string | null | undefined): string => {
   const map: Record<string, string> = {
     APC:  'bg-[#271E5D] text-white',
@@ -38,18 +40,41 @@ const partyBadgeClass = (party: string | null | undefined): string => {
   return map[party ?? ''] ?? 'bg-[#787680] text-white';
 };
 
-// This would come from the database in production
-const featuredStats = {
-  totalPoliticians: 1650,
-  totalStates: 36,
-  promisesTracked: 2847,
-  corruptionCases: 89,
-};
-
 export default async function HomePage() {
   // Featured Officials — driven by real community ratings (same source as Leaderboard).
   // For each chamber, we pick the politician with the highest average community score.
   const adminClient = supabaseAdmin ?? supabase;
+
+  const countRows = async (table: 'politicians' | 'promises' | 'legal_records') => {
+    const { count, error } = await adminClient
+      .from(table)
+      .select('*', { count: 'exact', head: true });
+
+    if (error) {
+      console.error(`Unable to count ${table}:`, error.message);
+      return 0;
+    }
+
+    return count ?? 0;
+  };
+
+  const countCurrentPositions = async (chamber: string, officeLevel?: string) => {
+    let query = adminClient
+      .from('positions')
+      .select('*', { count: 'exact', head: true })
+      .eq('is_current', true)
+      .eq('chamber', chamber);
+
+    if (officeLevel) query = query.eq('office_level', officeLevel);
+
+    const { count, error } = await query;
+    if (error) {
+      console.error(`Unable to count ${chamber} positions:`, error.message);
+      return 0;
+    }
+
+    return count ?? 0;
+  };
 
   type FeaturedRow = {
     id: string;
@@ -65,7 +90,7 @@ export default async function HomePage() {
   const FEATURED_SELECT = 'id, full_name, slug, photo_url, state_of_origin, positions!inner(title, party, state, chamber, is_current)';
 
   // Fetch politicians per chamber + all community ratings in parallel
-  const [senateRes, houseRes, execRes, ratingsRes] = await Promise.all([
+  const [senateRes, houseRes, execRes, ratingsRes, totalPoliticians, promisesTracked, corruptionCases, governors, senators, federalReps, stateReps, lgaChairmen] = await Promise.all([
     supabase.from('politicians').select(FEATURED_SELECT)
       .eq('positions.is_current', true).eq('positions.chamber', 'Senate'),
     supabase.from('politicians').select(FEATURED_SELECT)
@@ -73,7 +98,23 @@ export default async function HomePage() {
     supabase.from('politicians').select(FEATURED_SELECT)
       .eq('positions.is_current', true).eq('positions.chamber', 'Executive'),
     adminClient.from('politician_ratings').select('politician_id, constituency_presence, legislative_activity, constituency_projects, accessibility, transparency, infrastructure, security, healthcare_education, economic_activity, transparency_communication'),
+    countRows('politicians'),
+    countRows('promises'),
+    countRows('legal_records'),
+    countCurrentPositions('Executive', 'state'),
+    countCurrentPositions('Senate'),
+    countCurrentPositions('House'),
+    countCurrentPositions('State Assembly'),
+    countCurrentPositions('Executive', 'local'),
   ]);
+
+  const featuredStats = {
+    totalPoliticians,
+    totalStates: NIGERIAN_STATES.length,
+    promisesTracked,
+    corruptionCases,
+  };
+  const stateCount = NIGERIAN_STATES.filter((state) => state !== 'FCT').length;
 
   // Build score map from real dimension columns (average of non-null 1-5 ratings × 20 → 0-100)
   const ratingSum: Record<string, number> = {};
@@ -160,7 +201,7 @@ export default async function HomePage() {
         {/* Stats Bar */}
         <div className="border-t border-[#271E5D]/10 dark:border-white/10 bg-white/60 dark:bg-card/60 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
+            <div className={`grid grid-cols-2 ${featuredStats.promisesTracked > 0 || featuredStats.corruptionCases > 0 ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-4 md:gap-6 text-center`}>
               <div>
                 <div className="font-mono text-2xl md:text-4xl font-bold text-[#5D49D6]">
                   {featuredStats.totalPoliticians}
@@ -169,22 +210,22 @@ export default async function HomePage() {
               </div>
               <div>
                 <div className="font-mono text-2xl md:text-4xl font-bold text-[#00C49A]">
-                  {featuredStats.totalStates}+1
+                  {stateCount} + FCT
                 </div>
                 <div className="text-sm text-[#787680] dark:text-[#9C9C98]">States + FCT</div>
               </div>
-              <div>
+              {featuredStats.promisesTracked > 0 && <div>
                 <div className="font-mono text-2xl md:text-4xl font-bold text-[#271E5D] dark:text-[#5D49D6]">
                   {featuredStats.promisesTracked.toLocaleString()}
                 </div>
                 <div className="text-sm text-[#787680] dark:text-[#9C9C98]">Promises Tracked</div>
-              </div>
-              <div>
+              </div>}
+              {featuredStats.corruptionCases > 0 && <div>
                 <div className="font-mono text-2xl md:text-4xl font-bold text-[#E84C30]">
                   {featuredStats.corruptionCases}
                 </div>
                 <div className="text-sm text-[#787680] dark:text-[#9C9C98]">Corruption Cases</div>
-              </div>
+              </div>}
             </div>
           </div>
         </div>
@@ -313,9 +354,9 @@ export default async function HomePage() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#5D49D6]/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Crown className="w-5 h-5 md:w-6 md:h-6 text-[#5D49D6]" />
                 </div>
-                <div className="font-display font-bold text-xl md:text-2xl text-[#5D49D6]">37</div>
+                <div className="font-display font-bold text-xl md:text-2xl text-[#5D49D6]">{governors}</div>
                 <div className="font-semibold text-foreground mt-1">Governors</div>
-                <div className="text-xs text-muted-foreground mt-0.5">36 States + FCT</div>
+                <div className="text-xs text-muted-foreground mt-0.5">State Executives</div>
               </div>
             </Link>
 
@@ -324,7 +365,7 @@ export default async function HomePage() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#271E5D]/10 dark:bg-[#5D49D6]/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Landmark className="w-5 h-5 md:w-6 md:h-6 text-[#271E5D] dark:text-[#5D49D6]" />
                 </div>
-                <div className="font-display font-bold text-xl md:text-2xl text-[#271E5D] dark:text-[#5D49D6]">109</div>
+                <div className="font-display font-bold text-xl md:text-2xl text-[#271E5D] dark:text-[#5D49D6]">{senators}</div>
                 <div className="font-semibold text-foreground mt-1">Senators</div>
                 <div className="text-xs text-muted-foreground mt-0.5">Upper chamber</div>
               </div>
@@ -335,7 +376,7 @@ export default async function HomePage() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#00C49A]/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Users className="w-5 h-5 md:w-6 md:h-6 text-[#00C49A]" />
                 </div>
-                <div className="font-display font-bold text-xl md:text-2xl text-[#00C49A]">360</div>
+                <div className="font-display font-bold text-xl md:text-2xl text-[#00C49A]">{federalReps}</div>
                 <div className="font-semibold text-foreground mt-1">Federal Reps</div>
                 <div className="text-xs text-muted-foreground mt-0.5">House of Reps</div>
               </div>
@@ -346,7 +387,7 @@ export default async function HomePage() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#5D49D6]/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Building2 className="w-5 h-5 md:w-6 md:h-6 text-[#5D49D6]" />
                 </div>
-                <div className="font-display font-bold text-xl md:text-2xl text-[#5D49D6]">993</div>
+                <div className="font-display font-bold text-xl md:text-2xl text-[#5D49D6]">{stateReps}</div>
                 <div className="font-semibold text-foreground mt-1">State Reps</div>
                 <div className="text-xs text-muted-foreground mt-0.5">State Assemblies</div>
               </div>
@@ -357,7 +398,7 @@ export default async function HomePage() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#E84C30]/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#E84C30]" />
                 </div>
-                <div className="font-display font-bold text-xl md:text-2xl text-[#E84C30]">774</div>
+                <div className="font-display font-bold text-xl md:text-2xl text-[#E84C30]">{lgaChairmen}</div>
                 <div className="font-semibold text-foreground mt-1">LGA Chairmen</div>
                 <div className="text-xs text-muted-foreground mt-0.5">Local Government</div>
               </div>

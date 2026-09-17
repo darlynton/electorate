@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { supabase, supabaseAdmin } from '@/lib/supabase';
 import { SearchBar } from '@/components/search';
 import { Button } from '@/components/ui/button';
-import { AddOfficialDialog } from '@/components/crowdsource';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { HomeHeroActions } from '@/components/home/home-hero-actions';
 import { HomeRepresentativesSection } from '@/components/home/home-representatives-section';
 import { 
   ArrowRight, 
@@ -179,22 +179,7 @@ export default async function HomePage() {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/politicians">
-                <Button size="lg" className="bg-[#5D49D6] text-white hover:bg-[#5D49D6]/90 gap-2">
-                  <Users className="w-5 h-5" />
-                  Explore Officials
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              {/* <Link href="/states">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2">
-                  <Vote className="w-5 h-5" />
-                  Who&apos;s My Rep?
-                </Button>
-              </Link> */}
-              <AddOfficialDialog triggerClassName="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#271E5D]/20 dark:border-white/20 bg-white dark:bg-white/10 text-[#271E5D] dark:text-white hover:bg-[#271E5D]/5 dark:hover:bg-white/15 h-9 px-5 text-sm font-semibold transition-colors" />
-            </div>
+            <HomeHeroActions />
           </div>
         </div>
 
